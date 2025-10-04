@@ -1,0 +1,156 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 29, 2025, 10:25:08 PM
+    Author     : user
+*/
+
+.white{
+    -fx-background-color: #fff;
+ }
+ .shadow{
+    
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,.5), 6,0,0,0);   
+    
+}
+.red{
+    
+    -fx-background-color: transparent;
+}
+.red:hover{
+    -fx-background-color: #d22525;
+}
+
+.addstock{
+    -fx-background-color: linear-gradient(to bottom right,#354172,#4c5c9d);
+}
+
+.add_product_label {
+    -fx-effect: dropshadow(gaussian, cornflowerblue, 15, 0.5, 0, 0);
+}
+.text-fields {
+    -fx-background-color: transparent;   /* background transparent */
+    -fx-text-fill: #354172;                /* text color white */
+    -fx-prompt-text-fill: rgba(255,255,255,0.7); /* prompt text white with little transparency */
+    -fx-border-color: transparent transparent #728de0 transparent; /* only bottom border white */
+    -fx-border-width: 0 0 2px 0;         /* underline thickness */
+    -fx-font-size: 14px;
+    -fx-padding: 5 5 5 5;
+}
+
+.text-fields:focused {
+    -fx-border-color: transparent transparent #354172 transparent; /* green underline on focus */
+    -fx-border-width: 0 0 2px 0;
+    -fx-prompt-text-fill: rgba(255,255,255,0.5); /* prompt text lighter on focus */
+}
+
+.center{
+    
+    -fx-border-radius: 8px;
+    
+}
+
+/* dashboard.css */
+
+/* Starting border style */
+.text_centre_panes {
+    -fx-border-color: #1a238b;
+    -fx-border-width: 3px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-insets: 5;
+}
+
+/* Gradient glow class for animation */
+.glow-borders {
+    -fx-border-color: linear-gradient(to right, #1a238b, #2c3ebf, #1a238b);
+    -fx-border-width: 3px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, #1a238b, 10, 0.3, 0, 0);
+}
+
+.add_btn{
+    
+    -fx-background-color: #fff;
+    -fx-text-fill: #354172;
+    -fx-border-color: #354172;
+    
+}
+.add_btn:hover{
+    
+    -fx-background-color: linear-gradient(to bottom right,#354172,#4c5c9d);
+    -fx-text-fill: #fff;
+}
+
+
+.arrow_Back{
+    
+    -fx-background-color: transparent;
+    
+}
+.arrow_Back:hover{
+      -fx-background-color:  #f2f2f2;  /* halka grey/light color */
+   
+}
+.tabletext-fields {
+    -fx-background-color: transparent;   /* background transparent */
+    -fx-text-fill: #354172;                /* text color white */
+    -fx-prompt-text-fill: #354172; /* prompt text white with little transparency */
+    -fx-border-color: transparent transparent #728de0 transparent; /* only bottom border white */
+    -fx-border-width: 0 0 2px 0;         /* underline thickness */
+    -fx-font-size: 14px;
+    -fx-padding: 5 5 5 5;
+}
+
+.tabletext-fields:focused {
+    -fx-border-color: transparent transparent #354172 transparent; /* green underline on focus */
+    -fx-border-width: 0 0 2px 0;
+    -fx-prompt-text-fill: #354172; /* prompt text lighter on focus */
+}
+
+.update_btn{
+    -fx-background-color: #fff;
+    -fx-border-color: #FB8C00;
+    -fx-text-fill: #FB8C00;
+    -fx-border-radius: 4px;
+}
+.update_btn:hover{
+    -fx-background-color: #FB8C00;
+    -fx-text-fill: #fff;
+}
+
+.clear_btn{
+    -fx-background-color: #fff;
+    -fx-border-color: #757575;
+    -fx-text-fill: #757575;
+    -fx-border-radius: 4px;
+}
+.clear_btn:hover{
+    -fx-background-color: #757575;
+    -fx-text-fill: #fff;
+}
+
+.delete_btn{
+    -fx-background-color: #fff;
+    -fx-border-color: #7f0000;
+    -fx-text-fill: #7f0000;
+    -fx-border-radius: 4px;
+}
+.delete_btn:hover{
+    -fx-background-color: #7f0000;
+    -fx-text-fill: #fff;
+}
+
+.change_btn{
+    -fx-background-color: #fff;
+    -fx-border-color: #c71b1b;
+    -fx-text-fill: #c71b1b;
+    -fx-border-radius: 4px;
+}
+.change_btn:hover{
+    -fx-background-color: #c71b1b;
+    -fx-text-fill: #fff;
+}

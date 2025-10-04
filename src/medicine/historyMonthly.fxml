@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="fisrt_pane" prefHeight="630.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicine.HistoryMonthlyController">
+   <children>
+      <StackPane fx:id="staxkpane" layoutX="36.0" layoutY="70.0" prefHeight="630.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="sec_pane" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="47.0" prefWidth="1188.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="back_btn" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleUpdateClick" prefHeight="26.0" prefWidth="73.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="11.333333333333334">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="1108.0" layoutY="11.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="73.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="6.666666666666671" AnchorPane.topAnchor="11.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="history_pane" layoutX="6.0" layoutY="60.0" prefHeight="75.0" prefWidth="1188.0" styleClass="addstock" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+                     <children>
+                        <Label layoutX="533.0" layoutY="26.0" styleClass="add_product_label" stylesheets="@dashboard.css" text="Monthly History" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fx:id="imageicon" fitHeight="60.0" fitWidth="133.0" layoutX="704.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/history%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="history_centre_pane" layoutX="6.0" layoutY="142.0" prefHeight="482.0" prefWidth="1188.0" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="142.0">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane layoutX="104.0" layoutY="57.0" prefHeight="411.0" prefWidth="500.0" AnchorPane.bottomAnchor="14.333333333333314" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="584.0" AnchorPane.topAnchor="57.0">
+                           <children>
+                              <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="619.3333333333334" layoutY="57.333333333333336" prefHeight="411.0" prefWidth="546.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="57.0">
+                           <children>
+                              <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <DatePicker layoutX="607.0" layoutY="10.0" prefHeight="35.0" prefWidth="287.0" />
+                        <TextField layoutX="327.0" layoutY="10.0" prefHeight="35.0" prefWidth="273.0" />
+                        <FontAwesomeIcon glyphName="SEARCH" layoutX="340.0" layoutY="34.0" size="1.5em" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="fisrt_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicine.FirstAddTableController">
+   <children>
+      <StackPane fx:id="second_stack" layoutY="52.0" prefHeight="620.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="second_pane" prefHeight="703.0" prefWidth="1239.0">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="43.0" prefWidth="1186.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="8.666666666666742">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Button layoutX="1113.0" layoutY="9.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="67.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="5.333333333333414" AnchorPane.topAnchor="9.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="backTo_add" layoutX="21.0" layoutY="9.0" mnemonicParsing="false" onAction="#hhandleUpdateClick" prefHeight="26.0" prefWidth="67.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="9.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="table_sidepane" layoutX="5.0" layoutY="56.0" prefHeight="550.0" prefWidth="255.0" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="56.0">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                        <String fx:value="center" />
+                     </styleClass>
+                     <children>
+                        <ImageView fx:id="cartoonImage" fitHeight="244.0" fitWidth="233.0" layoutX="-5.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/person.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="starLabel" layoutX="50.0" layoutY="156.0" text="Star Medicines" textFill="#354172">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="arrowLabel" layoutX="111.0" layoutY="207.0">
+                           <graphic>
+                              <FontAwesomeIcon fill="#354172" glyphName="ARROW_UP" size="3em" wrappingWidth="33.42856979370117" />
+                           </graphic>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Table_pane" layoutX="280.0" layoutY="52.0" prefHeight="615.0" prefWidth="950.0" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="9.333333333333258" AnchorPane.topAnchor="52.0">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <TableView layoutX="7.0" layoutY="6.0" prefHeight="381.0" prefWidth="897.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="8.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <TextField layoutX="7.0" layoutY="401.0" prefHeight="33.0" prefWidth="113.0" promptText="Item Code" styleClass="tabletext-fields" stylesheets="@dashboard.css" />
+                        <TextField layoutX="131.0" layoutY="401.0" prefHeight="33.0" prefWidth="135.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" />
+                        <TextField layoutX="279.0" layoutY="401.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Batch No" />
+                        <TextField layoutX="411.0" layoutY="401.0" prefHeight="33.0" prefWidth="129.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Expiry Date" />
+                        <TextField layoutX="552.0" layoutY="401.0" prefHeight="33.0" prefWidth="129.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Stock" />
+                        <TextField layoutX="692.0" layoutY="401.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Bonus" />
+                        <TextField layoutX="826.0" layoutY="401.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Company Code" />
+                        <TextField layoutX="9.0" layoutY="442.0" prefHeight="33.0" prefWidth="113.0" promptText="Item Code" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Comp Disc" />
+                        <TextField layoutX="133.0" layoutY="442.0" prefHeight="33.0" prefWidth="135.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Trade Price" />
+                        <TextField layoutX="281.0" layoutY="442.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Discount%" />
+                        <TextField layoutX="413.0" layoutY="442.0" prefHeight="33.0" prefWidth="129.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Bonus Price" />
+                        <TextField layoutX="554.0" layoutY="442.0" prefHeight="33.0" prefWidth="129.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Cost Price" />
+                        <TextField layoutX="694.0" layoutY="442.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Sale Tax" />
+                        <TextField layoutX="828.0" layoutY="442.0" prefHeight="33.0" prefWidth="121.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Sale Price" />
+                        <TextField layoutX="112.0" layoutY="483.0" prefHeight="33.0" prefWidth="214.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Group" />
+                        <TextField layoutX="368.0" layoutY="483.0" prefHeight="33.0" prefWidth="214.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Comp Name" />
+                        <TextField layoutX="619.0" layoutY="483.0" prefHeight="33.0" prefWidth="214.0" promptText="Item Name" styleClass="tabletext-fields" stylesheets="@dashboard.css" text="Pieces in Pack" />
+                        <Button fx:id="update_btn" layoutX="298.0" layoutY="529.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="343.0" styleClass="update_btn" stylesheets="@dashboard.css" text="Update" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="308.00000000000006">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clear_btn" layoutX="298.0" layoutY="569.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="343.0" styleClass="clear_btn" stylesheets="@dashboard.css" text="Clear" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="308.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="delete_btn" layoutX="298.0" layoutY="612.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="343.0" styleClass="delete_btn" stylesheets="@dashboard.css" text="Delete" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="308.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </children></AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
