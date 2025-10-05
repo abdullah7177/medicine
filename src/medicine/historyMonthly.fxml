@@ -58,23 +58,13 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <AnchorPane layoutX="104.0" layoutY="57.0" prefHeight="411.0" prefWidth="500.0" AnchorPane.bottomAnchor="14.333333333333314" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="584.0" AnchorPane.topAnchor="57.0">
+                        <AnchorPane fx:id="history_centre_pane" layoutX="104.0" layoutY="57.0" prefHeight="411.0" prefWidth="1065.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="57.0">
                            <children>
                               <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
                                   <TableColumn prefWidth="75.0" text="C2" />
                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="619.3333333333334" layoutY="57.333333333333336" prefHeight="411.0" prefWidth="546.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="57.0">
-                           <children>
-                              <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <columns>
-                                    <TableColumn prefWidth="75.0" text="C1" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
-                                 </columns>
                               </TableView>
                            </children>
                         </AnchorPane>

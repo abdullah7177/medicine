@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 
 import javafx.animation.*;
 import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,6 +22,11 @@ import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.BorderStroke;
+import javafx.scene.layout.BorderStrokeStyle;
+import javafx.scene.layout.BorderWidths;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
@@ -27,6 +34,7 @@ import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeLineCap;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -46,6 +54,10 @@ public class HistoryMonthlyController implements Initializable {
     private ImageView imageicon;
     @FXML
     private AnchorPane history_centre_pane;
+
+    // Rainbow border animation
+    private Timeline rainbowTimeline;
+    private double hue = 0;
 
     @FXML
     private void handleUpdateClick() {
@@ -70,13 +82,12 @@ public class HistoryMonthlyController implements Initializable {
 
     private void animateHistoryIconRotation() {
         RotateTransition rotate = new RotateTransition(Duration.seconds(2), imageicon);
-        rotate.setByAngle(-360); // Counter-clockwise rotation
-        rotate.setCycleCount(Animation.INDEFINITE); // Loop forever
-        rotate.setInterpolator(Interpolator.LINEAR); // Smooth speed
+        rotate.setByAngle(-360);
+        rotate.setCycleCount(Animation.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
         rotate.play();
     }
 
-  
     private void lockHistoryPaneSize() {
         double originalScaleX = history_pane.getScaleX();
         double originalScaleY = history_pane.getScaleY();
@@ -122,7 +133,7 @@ public class HistoryMonthlyController implements Initializable {
     }
 
     private void createAndAnimateStar() {
-        Circle star = new Circle(1 + Math.random() * 2); // size: 1–3px
+        Circle star = new Circle(1 + Math.random() * 2);
         star.setFill(Color.WHITE);
         star.setOpacity(0.0);
 
@@ -153,199 +164,143 @@ public class HistoryMonthlyController implements Initializable {
         animation.play();
     }
 
-  //   SUN///////////////
-    
-private void createSunWithLiveRays() {
-    if (history_centre_pane == null || history_centre_pane.getWidth() == 0) return;
+    // SUN - Fixed in position
+    private void createSunWithLiveRays() {
+        if (history_centre_pane == null) return;
 
- 
-    double sunX = 40;  // thoda bahar left
-    double sunY = 40;  // thoda bahar top
+        // Wait for pane to have proper size
+        Platform.runLater(() -> {
+            if (history_centre_pane.getWidth() == 0) return;
+            
+            double sunX = 40;
+            double sunY = 40;
 
-    Circle sunCore = new Circle(20);
-    sunCore.setFill(Color.web("#FDB813"));
-    sunCore.setEffect(new DropShadow(30, Color.web("#FFD700")));
-    sunCore.setLayoutX(sunX);
-    sunCore.setLayoutY(sunY);
+            Circle sunCore = new Circle(20);
+            sunCore.setFill(Color.web("#FDB813"));
+            sunCore.setEffect(new DropShadow(30, Color.web("#FFD700")));
+            sunCore.setLayoutX(sunX);
+            sunCore.setLayoutY(sunY);
+            sunCore.setManaged(false);
 
-    Circle sunGlow = new Circle(50);
-    sunGlow.setFill(Color.web("#FFF9C4", 0.3));
-    sunGlow.setLayoutX(sunX);
-    sunGlow.setLayoutY(sunY);
+            Circle sunGlow = new Circle(50);
+            sunGlow.setFill(Color.web("#FFF9C4", 0.3));
+            sunGlow.setLayoutX(sunX);
+            sunGlow.setLayoutY(sunY);
+            sunGlow.setManaged(false);
 
-    ScaleTransition pulse = new ScaleTransition(Duration.seconds(2), sunGlow);
-    pulse.setFromX(1);
-    pulse.setFromY(1);
-    pulse.setToX(1.15);
-    pulse.setToY(1.15);
-    pulse.setCycleCount(Animation.INDEFINITE);
-    pulse.setAutoReverse(true);
-    pulse.play();
+            ScaleTransition pulse = new ScaleTransition(Duration.seconds(2), sunGlow);
+            pulse.setFromX(1);
+            pulse.setFromY(1);
+            pulse.setToX(1.15);
+            pulse.setToY(1.15);
+            pulse.setCycleCount(Animation.INDEFINITE);
+            pulse.setAutoReverse(true);
+            pulse.play();
 
-    Group rays = createInnerSunRays(sunX, sunY);
+            Group rays = createInnerSunRays(sunX, sunY);
 
-    history_centre_pane.getChildren().addAll(rays, sunGlow, sunCore);
-}
-
-private Group createInnerSunRays(double centerX, double centerY) {
-    Group rayGroup = new Group();
-
-    int rayCount = 8;
-    double rayLength = 30;
-    double rayWidth = 6;
-
-    for (int i = 0; i < rayCount; i++) {
-        double angle = i * (360.0 / rayCount);
-
-        Rectangle ray = new Rectangle(rayLength, rayWidth);
-        ray.setFill(new LinearGradient(
-                0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
-                new Stop(0, Color.web("#FFF176", 0.6)),
-                new Stop(1, Color.TRANSPARENT)
-        ));
-        ray.setArcWidth(4);
-        ray.setArcHeight(4);
-
-        // position relative to centerX, centerY
-        ray.setTranslateX(centerX - rayLength / 2);
-        ray.setTranslateY(centerY - rayWidth / 2);
-
-        ray.setRotate(angle);
-
-        rayGroup.getChildren().add(ray);
+            history_centre_pane.getChildren().addAll(rays, sunGlow, sunCore);
+        });
     }
 
-    FadeTransition shimmer = new FadeTransition(Duration.seconds(2), rayGroup);
-    shimmer.setFromValue(0.4);
-    shimmer.setToValue(0.8);
-    shimmer.setCycleCount(Animation.INDEFINITE);
-    shimmer.setAutoReverse(true);
-    shimmer.play();
+    private Group createInnerSunRays(double centerX, double centerY) {
+        Group rayGroup = new Group();
+        rayGroup.setManaged(false);
 
-    return rayGroup;
-}
+        int rayCount = 8;
+        double rayLength = 30;
+        double rayWidth = 6;
 
+        for (int i = 0; i < rayCount; i++) {
+            double angle = i * (360.0 / rayCount);
 
+            Rectangle ray = new Rectangle(rayLength, rayWidth);
+            ray.setFill(new LinearGradient(
+                    0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+                    new Stop(0, Color.web("#FFF176", 0.6)),
+                    new Stop(1, Color.TRANSPARENT)
+            ));
+            ray.setArcWidth(4);
+            ray.setArcHeight(4);
 
+            ray.setTranslateX(centerX - rayLength / 2);
+            ray.setTranslateY(centerY - rayWidth / 2);
 
-    
-    
-//private void createGradientMeteor() {
-//    if (history_centre_pane == null || history_centre_pane.getWidth() == 0) return;
-//
-//    double startX = Math.random() * history_centre_pane.getWidth() * 0.7;
-//    double startY = Math.random() * history_centre_pane.getHeight() * 0.2;
-//
-//    // 🌟 Head: Shiny circle
-//    Circle head = new Circle(5 + Math.random() * 3); // Bigger head
-//    head.setFill(Color.web("#FFFFFF"));
-//    head.setEffect(new DropShadow(20, Color.web("#FFFFFF"))); // glowing
-//    head.setOpacity(0.0);
-//    head.setLayoutX(startX);
-//    head.setLayoutY(startY);
-//    head.setManaged(false);
-//
-//    // 🌠 Tail: Gradient rectangle
-//    Rectangle tail = new Rectangle(120, 2); // Long thin trail
-//    tail.setFill(new LinearGradient(
-//            1, 0, 0, 0, true, CycleMethod.NO_CYCLE,
-//            new Stop(0, Color.web("#354172")), // Start of tail (near head)
-//            new Stop(1, Color.web("#FFFFFF", 0)) // Fades out
-//    ));
-//    tail.setArcWidth(2);
-//    tail.setArcHeight(2);
-//    tail.setOpacity(0.0);
-//    tail.setLayoutX(startX);
-//    tail.setLayoutY(startY);
-//    tail.setRotate(45 + Math.random() * 10); // diagonal
-//    tail.setManaged(false);
-//
-//    history_centre_pane.getChildren().addAll(tail, head);
-//
-//    // ✨ Fade in quickly
-//    FadeTransition fadeIn = new FadeTransition(Duration.seconds(0.1), head);
-//    fadeIn.setFromValue(0);
-//    fadeIn.setToValue(1);
-//
-//    FadeTransition tailFadeIn = new FadeTransition(Duration.seconds(0.2), tail);
-//    tailFadeIn.setFromValue(0);
-//    tailFadeIn.setToValue(1);
-//
-//    // 🚀 Move both together
-//    double moveX = 500 + Math.random() * 200;
-//    double moveY = 400 + Math.random() * 200;
-//
-//    TranslateTransition moveHead = new TranslateTransition(Duration.seconds(1.2), head);
-//    moveHead.setByX(moveX);
-//    moveHead.setByY(moveY);
-//    moveHead.setInterpolator(Interpolator.EASE_OUT);
-//
-//    TranslateTransition moveTail = new TranslateTransition(Duration.seconds(1.2), tail);
-//    moveTail.setByX(moveX);
-//    moveTail.setByY(moveY);
-//    moveTail.setInterpolator(Interpolator.EASE_OUT);
-//
-//    // 🧊 Fade out at the end
-//    FadeTransition fadeOut = new FadeTransition(Duration.seconds(0.4), head);
-//    fadeOut.setFromValue(1);
-//    fadeOut.setToValue(0);
-//    fadeOut.setDelay(Duration.seconds(0.9));
-//
-//    FadeTransition tailFadeOut = new FadeTransition(Duration.seconds(0.4), tail);
-//    tailFadeOut.setFromValue(1);
-//    tailFadeOut.setToValue(0);
-//    tailFadeOut.setDelay(Duration.seconds(0.9));
-//
-//    ParallelTransition all = new ParallelTransition(
-//            fadeIn, tailFadeIn,
-//            moveHead, moveTail,
-//            fadeOut, tailFadeOut
-//    );
-//
-//    all.setOnFinished(e -> {
-//        history_centre_pane.getChildren().removeAll(head, tail);
-//    });
-//
-//    all.play();
-//}
-//
-//
-//private void startGradientMeteorShower() {
-//    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> {
-//        int count = 4 + (int) (Math.random() * 3); // 4–6 meteors
-//        for (int i = 0; i < count; i++) {
-//            PauseTransition delay = new PauseTransition(Duration.millis(i * 300 + Math.random() * 200));
-//            delay.setOnFinished(ev -> createGradientMeteor());
-//            delay.play();
-//        }
-//    }));
-//    timeline.setCycleCount(Animation.INDEFINITE);
-//    timeline.play();
-//}
+            ray.setRotate(angle);
 
-
-
-
-@Override
-public void initialize(URL url, ResourceBundle rb) {
-    Platform.runLater(() -> {
-        Stage stage = (Stage) staxkpane.getScene().getWindow();
-        if (stage != null) {
-            stage.setMaximized(true);
+            rayGroup.getChildren().add(ray);
         }
-        animateFirstPaneOpen();
-           createSunWithLiveRays();
 
-//        createGradientMeteor(); // moved inside runLater
-    });
+        FadeTransition shimmer = new FadeTransition(Duration.seconds(2), rayGroup);
+        shimmer.setFromValue(0.4);
+        shimmer.setToValue(0.8);
+        shimmer.setCycleCount(Animation.INDEFINITE);
+        shimmer.setAutoReverse(true);
+        shimmer.play();
 
-    startStarAnimation();
-    lockHistoryPaneSize();
-//    createSunInHistoryPane();
-//    startGradientMeteorShower();
-}
+        return rayGroup;
+    }
 
+    // ✨ ROTATING COLOR BORDER - Starting from #354172 ✨
+    private void applyRainbowBorder() {
+        // Starting hue for #354172 (bluish color)
+        hue = 230; // This gives us a color close to #354172
+        
+        rainbowTimeline = new Timeline(
+            new KeyFrame(Duration.millis(40), event -> {
+                // Hue continuously rotate karta rahega
+                hue += 1.5;
+                if (hue > 360) {
+                    hue = 0;
+                }
+                
+                // HSB color model se rotating color
+                Color rotatingColor = Color.hsb(hue, 0.6, 0.45); // Saturation and brightness adjusted for #354172 tone
+                
+                // Single line border with immediate rounding
+                history_centre_pane.setBorder(new Border(
+                    new BorderStroke(
+                        rotatingColor,                   // rotating color starting from #354172
+                        BorderStrokeStyle.SOLID,         // solid single line
+                        new CornerRadii(10),             // immediate smooth rounding
+                        new BorderWidths(3)              // 3px border
+                    )
+                ));
+            })
+        );
+        
+        rainbowTimeline.setCycleCount(Timeline.INDEFINITE);
+        rainbowTimeline.play();
+    }
 
+    // Optional: Rainbow animation ko stop/control karne ke liye
+    public void stopRainbowAnimation() {
+        if (rainbowTimeline != null) {
+            rainbowTimeline.stop();
+        }
+    }
+    
+    public void setRainbowSpeed(double speed) {
+        if (rainbowTimeline != null) {
+            rainbowTimeline.setRate(speed);
+        }
+    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        Platform.runLater(() -> {
+            Stage stage = (Stage) staxkpane.getScene().getWindow();
+            if (stage != null) {
+                stage.setMaximized(true);
+            }
+            animateFirstPaneOpen();
+            createSunWithLiveRays();
+            
+            // 🌈 Rainbow border animation start
+            applyRainbowBorder();
+        });
 
+        startStarAnimation();
+        lockHistoryPaneSize();
+    }
 }
