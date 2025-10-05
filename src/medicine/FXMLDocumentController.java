@@ -303,6 +303,8 @@ private void createAndAnimateStar() {
             entrance.play();
         }
     }
+    
+    ////
 
     private void animateAddProductPane() {
         if (add_product_anchorpane != null) {
