@@ -17,6 +17,7 @@ import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
@@ -58,6 +59,8 @@ public class HistoryMonthlyController implements Initializable {
     // Rainbow border animation
     private Timeline rainbowTimeline;
     private double hue = 0;
+    @FXML
+    private Label monthly_label;
 
     @FXML
     private void handleUpdateClick() {
@@ -164,127 +167,50 @@ public class HistoryMonthlyController implements Initializable {
         animation.play();
     }
 
-    // SUN - Fixed in position
-    private void createSunWithLiveRays() {
-        if (history_centre_pane == null) return;
+   
+    
+        private void animateAddProductLabelBounce() {
+        if (monthly_label != null) {
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(0.6), monthly_label);
+            scale.setFromX(0.0);
+            scale.setFromY(0.0);
+            scale.setToX(1.0);
+            scale.setToY(1.0);
+            scale.setInterpolator(Interpolator.EASE_OUT);
 
-        // Wait for pane to have proper size
-        Platform.runLater(() -> {
-            if (history_centre_pane.getWidth() == 0) return;
-            
-            double sunX = 40;
-            double sunY = 40;
+            FadeTransition fade = new FadeTransition(Duration.seconds(0.6), monthly_label);
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
 
-            Circle sunCore = new Circle(20);
-            sunCore.setFill(Color.web("#FDB813"));
-            sunCore.setEffect(new DropShadow(30, Color.web("#FFD700")));
-            sunCore.setLayoutX(sunX);
-            sunCore.setLayoutY(sunY);
-            sunCore.setManaged(false);
+            PauseTransition delay = new PauseTransition(Duration.seconds(2.1));
 
-            Circle sunGlow = new Circle(50);
-            sunGlow.setFill(Color.web("#FFF9C4", 0.3));
-            sunGlow.setLayoutX(sunX);
-            sunGlow.setLayoutY(sunY);
-            sunGlow.setManaged(false);
-
-            ScaleTransition pulse = new ScaleTransition(Duration.seconds(2), sunGlow);
-            pulse.setFromX(1);
-            pulse.setFromY(1);
-            pulse.setToX(1.15);
-            pulse.setToY(1.15);
-            pulse.setCycleCount(Animation.INDEFINITE);
-            pulse.setAutoReverse(true);
-            pulse.play();
-
-            Group rays = createInnerSunRays(sunX, sunY);
-
-            history_centre_pane.getChildren().addAll(rays, sunGlow, sunCore);
-        });
-    }
-
-    private Group createInnerSunRays(double centerX, double centerY) {
-        Group rayGroup = new Group();
-        rayGroup.setManaged(false);
-
-        int rayCount = 8;
-        double rayLength = 30;
-        double rayWidth = 6;
-
-        for (int i = 0; i < rayCount; i++) {
-            double angle = i * (360.0 / rayCount);
-
-            Rectangle ray = new Rectangle(rayLength, rayWidth);
-            ray.setFill(new LinearGradient(
-                    0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
-                    new Stop(0, Color.web("#FFF176", 0.6)),
-                    new Stop(1, Color.TRANSPARENT)
-            ));
-            ray.setArcWidth(4);
-            ray.setArcHeight(4);
-
-            ray.setTranslateX(centerX - rayLength / 2);
-            ray.setTranslateY(centerY - rayWidth / 2);
-
-            ray.setRotate(angle);
-
-            rayGroup.getChildren().add(ray);
+            ParallelTransition labelAnimation = new ParallelTransition(scale, fade);
+            SequentialTransition full = new SequentialTransition(delay, labelAnimation);
+            full.play();
         }
-
-        FadeTransition shimmer = new FadeTransition(Duration.seconds(2), rayGroup);
-        shimmer.setFromValue(0.4);
-        shimmer.setToValue(0.8);
-        shimmer.setCycleCount(Animation.INDEFINITE);
-        shimmer.setAutoReverse(true);
-        shimmer.play();
-
-        return rayGroup;
     }
 
-    // ✨ ROTATING COLOR BORDER - Starting from #354172 ✨
-    private void applyRainbowBorder() {
-        // Starting hue for #354172 (bluish color)
-        hue = 230; // This gives us a color close to #354172
-        
-        rainbowTimeline = new Timeline(
-            new KeyFrame(Duration.millis(40), event -> {
-                // Hue continuously rotate karta rahega
-                hue += 1.5;
-                if (hue > 360) {
-                    hue = 0;
-                }
-                
-                // HSB color model se rotating color
-                Color rotatingColor = Color.hsb(hue, 0.6, 0.45); // Saturation and brightness adjusted for #354172 tone
-                
-                // Single line border with immediate rounding
-                history_centre_pane.setBorder(new Border(
-                    new BorderStroke(
-                        rotatingColor,                   // rotating color starting from #354172
-                        BorderStrokeStyle.SOLID,         // solid single line
-                        new CornerRadii(10),             // immediate smooth rounding
-                        new BorderWidths(3)              // 3px border
-                    )
-                ));
-            })
-        );
-        
-        rainbowTimeline.setCycleCount(Timeline.INDEFINITE);
-        rainbowTimeline.play();
-    }
+    private void animateAddProductLabelBounces() {
+        if (monthly_label != null) {
+            DropShadow glow = new DropShadow();
+            glow.setColor(Color.CORNFLOWERBLUE);
+            glow.setRadius(30);
+            glow.setSpread(0.3);
+            monthly_label.setEffect(glow);
 
-    // Optional: Rainbow animation ko stop/control karne ke liye
-    public void stopRainbowAnimation() {
-        if (rainbowTimeline != null) {
-            rainbowTimeline.stop();
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(1), monthly_label);
+            scale.setFromX(1.0);
+            scale.setFromY(1.0);
+            scale.setToX(1.1);
+            scale.setToY(1.1);
+            scale.setCycleCount(Animation.INDEFINITE);
+            scale.setAutoReverse(true);
+            scale.play();
         }
     }
     
-    public void setRainbowSpeed(double speed) {
-        if (rainbowTimeline != null) {
-            rainbowTimeline.setRate(speed);
-        }
-    }
+    
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -294,13 +220,54 @@ public class HistoryMonthlyController implements Initializable {
                 stage.setMaximized(true);
             }
             animateFirstPaneOpen();
-            createSunWithLiveRays();
             
-            // 🌈 Rainbow border animation start
-            applyRainbowBorder();
+           
         });
 
         startStarAnimation();
         lockHistoryPaneSize();
+        
+        
+
+    // Rectangle as the border path
+    Rectangle borderLine = new Rectangle();
+    borderLine.setFill(null);
+
+    // Bind size with slight margin
+    borderLine.widthProperty().bind(history_centre_pane.widthProperty().subtract(4));
+    borderLine.heightProperty().bind(history_centre_pane.heightProperty().subtract(4));
+
+    // No radius (perfect rectangular line)
+    borderLine.setArcWidth(0);
+    borderLine.setArcHeight(0);
+
+    // Gradient stroke: #354172 → #ffffff
+    LinearGradient gradient = new LinearGradient(
+            0, 0, 1, 0, true, CycleMethod.NO_CYCLE,
+            new Stop(0, Color.web("#354172")),
+            new Stop(1, Color.web("#ffffff"))
+    );
+    borderLine.setStroke(gradient);
+    borderLine.setStrokeWidth(3);
+
+    // Dash effect → sirf ek line move hogi
+    borderLine.getStrokeDashArray().addAll(80.0, 300.0); // adjust 80/300 for length-gap
+
+    // Position inside pane
+    history_centre_pane.getChildren().add(borderLine);
+
+    // Offset animation for continuous movement
+    DoubleProperty offset = new SimpleDoubleProperty(0);
+    borderLine.strokeDashOffsetProperty().bind(offset);
+
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.ZERO, new KeyValue(offset, 0)),
+            new KeyFrame(Duration.seconds(3), new KeyValue(offset, 380)) // speed control
+    );
+    timeline.setCycleCount(Animation.INDEFINITE);
+    timeline.play();
+
+
+        
     }
 }

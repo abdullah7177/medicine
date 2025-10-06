@@ -154,3 +154,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #c71b1b;
     -fx-text-fill: #fff;
 }
+.history_btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-border-color: #fff;
+    
+}
+.history_btn:hover{
+    
+    -fx-background-color: #fff;
+    -fx-text-fill: #354172;
+    -fx-border-color: #354172;
+    
+}
+
+.text-fieldss {
+    -fx-background-color: transparent;   /* background transparent */
+    -fx-text-fill: #fff;                /* text color white */
+    -fx-prompt-text-fill: rgba(255,255,255,0.7); /* prompt text white with little transparency */
+    -fx-border-color: transparent transparent grey transparent; /* only bottom border white */
+    -fx-border-width: 0 0 2px 0;         /* underline thickness */
+    -fx-font-size: 14px;
+    -fx-padding: 5 5 5 5;
+}
+
+.text-fieldss:focused {
+    -fx-border-color: transparent transparent #fff transparent; /* green underline on focus */
+    -fx-border-width: 0 0 2px 0;
+    -fx-prompt-text-fill: rgba(255,255,255,0.5); /* prompt text lighter on focus */
+}

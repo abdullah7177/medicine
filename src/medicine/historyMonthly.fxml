@@ -38,9 +38,9 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="history_pane" layoutX="6.0" layoutY="60.0" prefHeight="75.0" prefWidth="1188.0" styleClass="addstock" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
+                  <AnchorPane fx:id="history_pane" layoutX="6.0" layoutY="65.0" prefHeight="68.0" prefWidth="1188.0" styleClass="addstock" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0">
                      <children>
-                        <Label layoutX="533.0" layoutY="26.0" styleClass="add_product_label" stylesheets="@dashboard.css" text="Monthly History" textFill="WHITE">
+                        <Label fx:id="monthly_label" layoutX="533.0" layoutY="26.0" styleClass="add_product_label" stylesheets="@dashboard.css" text="Monthly History" textFill="WHITE">
                            <font>
                               <Font name="SansSerif Bold" size="20.0" />
                            </font>
@@ -58,7 +58,7 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <AnchorPane fx:id="history_centre_pane" layoutX="104.0" layoutY="57.0" prefHeight="411.0" prefWidth="1065.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="57.0">
+                        <AnchorPane fx:id="history_centre_pane" layoutX="20.0" layoutY="57.0" prefHeight="411.0" prefWidth="1149.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="57.0">
                            <children>
                               <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
