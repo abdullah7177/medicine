@@ -12,13 +12,13 @@ public class Medicine extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         // Load the FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("historytext.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
         Parent root = loader.load();
 
         //firstAddTable
         //historyMonthly  FXMLDocument
       //  historytext
-        
+        //dashboard
         
         
         

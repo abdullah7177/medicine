@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="dash_pane" prefHeight="620.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="medicine.DashboardController">
+   <children>
+      <StackPane fx:id="dash_stack" layoutX="61.0" layoutY="97.0" prefHeight="620.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="dash_pane2" prefHeight="200.0" prefWidth="200.0" styleClass="white" stylesheets="@dashboard.css">
+               <children>
+                  <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="40.0" prefWidth="1188.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                     <styleClass>
+                        <String fx:value="white" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Button layoutX="6.0" layoutY="7.333333333333333" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="7.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="1116.0" layoutY="7.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="65.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="7.0">
+                           <graphic>
+                              <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="dashboard_pane" layoutX="6.0" layoutY="53.0" prefHeight="77.0" prefWidth="1189.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0">
+                     <children>
+                        <Label fx:id="dashboard_label" layoutX="550.0" layoutY="16.0" styleClass="add_product_label" stylesheets="@dashboard.css" text="DASHBOARD" textFill="#e6e6e6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="addstock" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
