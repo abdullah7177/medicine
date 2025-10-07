@@ -26,7 +26,7 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <Button fx:id="back_btn" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleUpdateClick" prefHeight="26.0" prefWidth="73.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="11.333333333333334">
+                        <Button fx:id="back_btn" layoutX="8.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleDashHIstoryButton" prefHeight="26.0" prefWidth="73.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="11.333333333333334">
                            <graphic>
                               <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
                            </graphic>
@@ -58,12 +58,12 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <AnchorPane fx:id="history_centre_pane" layoutX="20.0" layoutY="57.0" prefHeight="411.0" prefWidth="1149.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="57.0">
+                        <AnchorPane fx:id="history_centre_pane" layoutX="20.0" layoutY="57.0" prefHeight="386.0" prefWidth="1149.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="57.0">
                            <children>
                               <TableView layoutX="66.0" layoutY="50.0" prefHeight="457.3333333333333" prefWidth="501.3333333333333" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
+                                  <TableColumn prefWidth="75.0" text="Baw" />
                                 </columns>
                               </TableView>
                            </children>
@@ -71,6 +71,7 @@
                         <DatePicker layoutX="607.0" layoutY="10.0" prefHeight="35.0" prefWidth="287.0" />
                         <TextField layoutX="327.0" layoutY="10.0" prefHeight="35.0" prefWidth="273.0" />
                         <FontAwesomeIcon glyphName="SEARCH" layoutX="340.0" layoutY="34.0" size="1.5em" />
+                        <Button fx:id="daily_btn" layoutX="1047.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleDailyButton" prefHeight="18.0" prefWidth="99.0" styleClass="daily" stylesheets="@dashboard.css" text="Daily" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="41.66666666666674" />
                      </children>
                   </AnchorPane>
                </children></AnchorPane>

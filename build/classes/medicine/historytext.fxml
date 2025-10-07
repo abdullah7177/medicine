@@ -24,7 +24,7 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <Button layoutX="8.0" layoutY="9.333333333333334" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="9.0">
+                        <Button fx:id="back_to_month" layoutX="8.0" layoutY="9.333333333333334" mnemonicParsing="false" onAction="#handleBACKButton" prefHeight="25.0" prefWidth="62.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="9.0">
                            <graphic>
                               <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
                            </graphic>
@@ -45,7 +45,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="daily_side_pane" layoutX="8.0" layoutY="141.0" prefHeight="446.0" prefWidth="486.0" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="141.0">
+                  <AnchorPane fx:id="daily_side_pane" layoutX="8.0" layoutY="141.0" prefHeight="443.0" prefWidth="486.0" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="141.0">
                      <styleClass>
                         <String fx:value="addstock" />
                         <String fx:value="shadow" />
@@ -70,9 +70,9 @@
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="daly_table_pane" layoutX="527.0" layoutY="182.0" prefHeight="405.0" prefWidth="665.0" AnchorPane.bottomAnchor="12.666666666666686" AnchorPane.leftAnchor="527.0" AnchorPane.rightAnchor="7.3333333333332575" AnchorPane.topAnchor="182.00000000000006">
+                  <AnchorPane fx:id="daly_table_pane" layoutX="528.0" layoutY="182.0" prefHeight="401.0" prefWidth="665.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="528.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="182.0">
                      <children>
-                        <TableView layoutX="125.0" layoutY="73.0" prefHeight="446.0" prefWidth="665.3333333333334" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView layoutX="125.0" layoutY="73.0" prefHeight="380.0" prefWidth="665.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn prefWidth="178.66668701171875" text="Description" />
                             <TableColumn prefWidth="167.33331298828125" text="Amount" />

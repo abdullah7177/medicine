@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,6 +38,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML private AnchorPane text_centre_pane;
     @FXML private Button add_product_btn;
     @FXML private Button change_btn;
+    @FXML
+    private Button back_To_Dash;
 
     @FXML
     public void close() {
@@ -48,7 +51,7 @@ public class FXMLDocumentController implements Initializable {
         Platform.runLater(() -> {
             Stage stage = (Stage) stacpane.getScene().getWindow();
             if (stage != null) {
-                stage.setMaximized(true);
+                stage.setFullScreen(true);
             }
         });
 
@@ -62,7 +65,7 @@ public class FXMLDocumentController implements Initializable {
             add_product_label.setOpacity(0.0);
         }
 
-        animateFullPageSwing();
+//        animateFullPageSwing();
         animateAddProductPane();
         animateAddProductLabelBounce();
         animateAddProductLabelBounces();
@@ -78,6 +81,44 @@ public class FXMLDocumentController implements Initializable {
         startStarAnimation();
         createAndAnimateStar();
     }
+    
+    
+    ////////
+    ////    BASCK TO DASHBOARD
+    
+        @FXML
+private void handleBACKButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
 
     //STARS ANIMATION 
   private void startStarAnimation() {
@@ -274,35 +315,35 @@ private void createAndAnimateStar() {
         });
     }
 
-    private void animateFullPageSwing() {
-        if (stacpane != null) {
-            stacpane.setTranslateY(-100);
-            stacpane.setRotationAxis(new Point3D(0, 0, 1));
-            stacpane.setRotate(-10);
-
-            TranslateTransition drop = new TranslateTransition(Duration.seconds(1.5), stacpane);
-            drop.setFromY(-100);
-            drop.setToY(0);
-            drop.setInterpolator(Interpolator.EASE_OUT);
-
-            RotateTransition rotate = new RotateTransition(Duration.seconds(0.6), stacpane);
-            rotate.setFromAngle(-10);
-            rotate.setToAngle(0);
-            rotate.setInterpolator(Interpolator.EASE_BOTH);
-
-            ScaleTransition bounce = new ScaleTransition(Duration.seconds(0.2), stacpane);
-            bounce.setFromX(1.0);
-            bounce.setFromY(1.0);
-            bounce.setToX(1.03);
-            bounce.setToY(1.03);
-            bounce.setCycleCount(2);
-            bounce.setAutoReverse(true);
-            bounce.setInterpolator(Interpolator.EASE_OUT);
-
-            SequentialTransition entrance = new SequentialTransition(drop, rotate, bounce);
-            entrance.play();
-        }
-    }
+//    private void animateFullPageSwing() {
+//        if (stacpane != null) {
+//            stacpane.setTranslateY(-100);
+//            stacpane.setRotationAxis(new Point3D(0, 0, 1));
+//            stacpane.setRotate(-10);
+//
+//            TranslateTransition drop = new TranslateTransition(Duration.seconds(1.5), stacpane);
+//            drop.setFromY(-100);
+//            drop.setToY(0);
+//            drop.setInterpolator(Interpolator.EASE_OUT);
+//
+//            RotateTransition rotate = new RotateTransition(Duration.seconds(0.6), stacpane);
+//            rotate.setFromAngle(-10);
+//            rotate.setToAngle(0);
+//            rotate.setInterpolator(Interpolator.EASE_BOTH);
+//
+//            ScaleTransition bounce = new ScaleTransition(Duration.seconds(0.2), stacpane);
+//            bounce.setFromX(1.0);
+//            bounce.setFromY(1.0);
+//            bounce.setToX(1.03);
+//            bounce.setToY(1.03);
+//            bounce.setCycleCount(2);
+//            bounce.setAutoReverse(true);
+//            bounce.setInterpolator(Interpolator.EASE_OUT);
+//
+//            SequentialTransition entrance = new SequentialTransition(drop, rotate, bounce);
+//            entrance.play();
+//        }
+//    }
     
     ////
 

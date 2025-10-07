@@ -24,9 +24,14 @@
                   <String fx:value="white" />
                </styleClass>
                <children>
-                  <Button fx:id="close" layoutX="1134.0" layoutY="11.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="73.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="11.0">
+                  <Button fx:id="close" layoutX="1134.0" layoutY="11.0" mnemonicParsing="false" onAction="#close" prefHeight="24.0" prefWidth="73.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="11.0">
                      <graphic>
                         <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="back_To_Dash" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleBACKButton" prefHeight="28.0" prefWidth="67.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
                      </graphic>
                   </Button>
                </children>

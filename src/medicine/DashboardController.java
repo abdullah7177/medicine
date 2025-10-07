@@ -1,18 +1,39 @@
 package medicine;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.*;
 import javafx.application.Platform;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.LinearGradient;
+import javafx.scene.paint.Stop;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -29,6 +50,16 @@ public class DashboardController implements Initializable {
 
     // Star color property (dynamic based on background)
     private final ObjectProperty<Color> starColorProp = new SimpleObjectProperty<>(Color.WHITE);
+    @FXML
+    private StackPane dash_stack;
+    @FXML
+    private Button dash_add_btnn;
+    @FXML
+    private ImageView addProductImage;
+    @FXML
+    private Button historyBtn;
+    @FXML
+    private ImageView hostoryimage;
 
     @FXML
     public void close() {
@@ -40,19 +71,32 @@ public class DashboardController implements Initializable {
         Platform.runLater(() -> {
             Stage stage = (Stage) dash_pane.getScene().getWindow();
             if (stage != null) {
-                stage.setMaximized(true);
+                stage.setFullScreen(true);
             }
-
-            // Start smooth color transition for dashboard_pane
+    // Start smooth color transition for dashboard_pane
             startSmoothPaneColorTransition(dashboard_pane, dashboard_label);
 
             // Start stars animation inside dashboard_pane
             startStarAnimation();
         });
         
+     animateAddProductButtonBounces();
+     animateAddProductButtonBounce();
+
+        
         animateAddProductLabelBounce();
         animateAddProductLabelBounces();
         
+        animateButtonColor(dash_add_btnn);
+        
+        startImagePulseAnimation(addProductImage);
+        
+        animateHistoryBtn();
+        animateHistoryBtns();
+        AnimateHISTORY(historyBtn);
+        
+        histtyBtnImage();
+
     }
 
     private void startSmoothPaneColorTransition(AnchorPane pane, Label label) {
@@ -146,6 +190,8 @@ public class DashboardController implements Initializable {
         animation.setOnFinished(e -> dashboard_pane.getChildren().remove(star));
         animation.play();
     }
+    //.........///////////////////
+    //////AADD bUTTON
     
     
     private void animateAddProductLabelBounce() {
@@ -187,9 +233,231 @@ public class DashboardController implements Initializable {
             scale.play();
         }
     }
+    
+ private void animateButtonColor(Button button) {
+    Color startColor = Color.web("#378b38");
+    Color endColor = Color.web("#d4c146");
 
+    ObjectProperty<Color> colorProperty = new SimpleObjectProperty<>(startColor);
+
+    colorProperty.addListener((obs, oldColor, newColor) -> {
+        String rgb = String.format("#%02X%02X%02X",
+                (int) (newColor.getRed() * 255),
+                (int) (newColor.getGreen() * 255),
+                (int) (newColor.getBlue() * 255));
+        button.setStyle("-fx-background-color: " + rgb + "; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;");
+    });
+
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.ZERO, new KeyValue(colorProperty, startColor, Interpolator.EASE_IN)),
+            new KeyFrame(Duration.seconds(4), new KeyValue(colorProperty, endColor, Interpolator.EASE_IN))
+    );
+    timeline.setCycleCount(Animation.INDEFINITE);
+    timeline.setAutoReverse(true);
+    timeline.play();
+}
+ 
+ 
+ 
+  private void animateAddProductButtonBounce() {
+        if (dash_add_btnn != null) {
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(0.6), dash_add_btnn);
+            scale.setFromX(0.0);
+            scale.setFromY(0.0);
+            scale.setToX(1.0);
+            scale.setToY(1.0);
+            scale.setInterpolator(Interpolator.EASE_OUT);
+
+            FadeTransition fade = new FadeTransition(Duration.seconds(0.6), dash_add_btnn);
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+
+            PauseTransition delay = new PauseTransition(Duration.seconds(2.1));
+
+            ParallelTransition labelAnimation = new ParallelTransition(scale, fade);
+            SequentialTransition full = new SequentialTransition(delay, labelAnimation);
+            full.play();
+        }
+    }
+
+    private void animateAddProductButtonBounces() {
+        if (dash_add_btnn != null) {
+//            DropShadow glow = new DropShadow();
+//            glow.setColor(Color.CORNFLOWERBLUE);
+//            glow.setRadius(30);
+//            glow.setSpread(0.3);
+//            dash_add_btnn.setEffect(glow);
+
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(1), dash_add_btnn);
+            scale.setFromX(1.0);
+            scale.setFromY(1.0);
+            scale.setToX(1.1);
+            scale.setToY(1.1);
+            scale.setCycleCount(Animation.INDEFINITE);
+            scale.setAutoReverse(true);
+            scale.play();
+        }
+    }
+    
+    
+    @FXML
+private void handleDashAddButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+      @FXML
+private void handleDashHIstoryButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("historyMonthly.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
 
     
     
     
+    
+    
+    
+    
+    //////////////////////////////////
+    //HISTORY BUTTONS
+
+    private void startImagePulseAnimation(ImageView imageView) {
+    ScaleTransition pulse = new ScaleTransition(Duration.seconds(1), imageView);
+    pulse.setFromX(1.0);
+    pulse.setFromY(1.0);
+    pulse.setToX(1.2);
+    pulse.setToY(1.2);
+    pulse.setCycleCount(Animation.INDEFINITE);
+    pulse.setAutoReverse(true);
+    pulse.play();
+}
+
+    
+      private void animateHistoryBtn() {
+        if (historyBtn != null) {
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(0.6), historyBtn);
+            scale.setFromX(0.0);
+            scale.setFromY(0.0);
+            scale.setToX(1.0);
+            scale.setToY(1.0);
+            scale.setInterpolator(Interpolator.EASE_OUT);
+
+            FadeTransition fade = new FadeTransition(Duration.seconds(0.6), historyBtn);
+            fade.setFromValue(0.0);
+            fade.setToValue(1.0);
+
+            PauseTransition delay = new PauseTransition(Duration.seconds(2.1));
+
+            ParallelTransition labelAnimation = new ParallelTransition(scale, fade);
+            SequentialTransition full = new SequentialTransition(delay, labelAnimation);
+            full.play();
+        }
+    }
+
+    private void animateHistoryBtns() {
+        if (historyBtn != null) {
+
+            ScaleTransition scale = new ScaleTransition(Duration.seconds(1), historyBtn);
+            scale.setFromX(1.0);
+            scale.setFromY(1.0);
+            scale.setToX(1.1);
+            scale.setToY(1.1);
+            scale.setCycleCount(Animation.INDEFINITE);
+            scale.setAutoReverse(true);
+            scale.play();
+        }
+    }
+     
+    
+     private void AnimateHISTORY(Button button) {
+    Color startColor = Color.web("#8d8484");
+    Color endColor = Color.web("#a36868");
+
+    ObjectProperty<Color> colorProperty = new SimpleObjectProperty<>(startColor);
+
+    colorProperty.addListener((obs, oldColor, newColor) -> {
+        String rgb = String.format("#%02X%02X%02X",
+                (int) (newColor.getRed() * 255),
+                (int) (newColor.getGreen() * 255),
+                (int) (newColor.getBlue() * 255));
+        button.setStyle("-fx-background-color: " + rgb + "; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10;");
+    });
+
+    Timeline timeline = new Timeline(
+            new KeyFrame(Duration.ZERO, new KeyValue(colorProperty, startColor, Interpolator.EASE_IN)),
+            new KeyFrame(Duration.seconds(4), new KeyValue(colorProperty, endColor, Interpolator.EASE_IN))
+    );
+    timeline.setCycleCount(Animation.INDEFINITE);
+    timeline.setAutoReverse(true);
+    timeline.play();
+}
+
+    
+      private void histtyBtnImage() {
+        RotateTransition rotate = new RotateTransition(Duration.seconds(2), hostoryimage);
+        rotate.setByAngle(-360);
+        rotate.setCycleCount(Animation.INDEFINITE);
+        rotate.setInterpolator(Interpolator.LINEAR);
+        rotate.play();
+    }
+     
+      
+      
+      
+     
 }

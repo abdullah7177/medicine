@@ -4,12 +4,14 @@
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="dash_pane" prefHeight="620.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="medicine.DashboardController">
+<AnchorPane id="AnchorPane" fx:id="dash_pane" prefHeight="620.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicine.DashboardController">
    <children>
       <StackPane fx:id="dash_stack" layoutX="61.0" layoutY="97.0" prefHeight="620.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -21,11 +23,6 @@
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <Button layoutX="6.0" layoutY="7.333333333333333" mnemonicParsing="false" prefHeight="26.0" prefWidth="65.0" styleClass="arrow_Back" stylesheets="@dashboard.css" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="7.0">
-                           <graphic>
-                              <FontAwesomeIcon glyphName="ARROW_LEFT" size="1.5em" />
-                           </graphic>
-                        </Button>
                         <Button layoutX="1116.0" layoutY="7.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="65.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="7.0">
                            <graphic>
                               <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
@@ -46,6 +43,38 @@
                         <String fx:value="shadow" />
                      </styleClass>
                   </AnchorPane>
+                  <Button fx:id="dash_add_btnn" layoutX="33.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleDashAddButton" prefHeight="345.0" prefWidth="246.0" styleClass="dash_add_btns" stylesheets="@dashboard.css" text="ADD" textFill="WHITE" AnchorPane.bottomAnchor="111.33333333333331" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="164.0">
+                     <font>
+                        <Font name="Tahoma" size="38.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="56.0" layoutY="360.0" prefWidth="200.0" AnchorPane.bottomAnchor="256.6666666666667" />
+                  <ImageView fx:id="addProductImage" fitHeight="57.0" fitWidth="83.0" layoutX="128.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="125.0">
+                     <image>
+                        <Image url="@images/add-product.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="historyBtn" layoutX="1143.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleDashHIstoryButton" prefHeight="345.0" prefWidth="246.0" styleClass="dash_history_btns" stylesheets="@dashboard.css" text="History" AnchorPane.bottomAnchor="111.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="164.0">
+                     <font>
+                        <Font name="Tahoma" size="38.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="944.0" layoutY="363.0" prefWidth="200.0" AnchorPane.bottomAnchor="253.66666666666666" AnchorPane.rightAnchor="56.0" />
+                  <ImageView fx:id="hostoryimage" fitHeight="68.0" fitWidth="118.0" layoutX="1010.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="122.0">
+                     <image>
+                        <Image url="@images/history%20(3).png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="14.0" layoutY="580.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="27.0" styleClass="logout" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="SIGN_OUT" size="2.5em" />
+                     </graphic>
+                  </Button>
+                  <Label layoutX="64.0" layoutY="578.0" text="LogOut" AnchorPane.bottomAnchor="16.666666666666668" AnchorPane.leftAnchor="64.0">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

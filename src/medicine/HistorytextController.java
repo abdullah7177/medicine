@@ -4,6 +4,7 @@
  */
 package medicine;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.Animation;
@@ -36,7 +37,11 @@ import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -76,6 +81,8 @@ public class HistorytextController implements Initializable {
     private Button daily_add;
     @FXML
     private AnchorPane daly_table_pane;
+    @FXML
+    private Button back_to_month;
 
     /**
      * Initializes the controller class.
@@ -463,13 +470,52 @@ private void animatePaneBorder(Pane targetPane) {
         System.exit(0);
     }
     
+    //////hanldes BACK TO MONTH
+    
+    
+     @FXML
+private void handleBACKButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("historyMonthly.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
        Platform.runLater(() -> {
             Stage stage = (Stage) history_text_pane.getScene().getWindow();
             if (stage != null) {
-                stage.setMaximized(true);
+                stage.setFullScreen(true);
             }
         startStarAnimation();            
            

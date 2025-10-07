@@ -10,6 +10,7 @@ import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
 import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.CycleMethod;
 import javafx.scene.paint.LinearGradient;
@@ -61,8 +63,9 @@ public class HistoryMonthlyController implements Initializable {
     private double hue = 0;
     @FXML
     private Label monthly_label;
-
     @FXML
+    private Button daily_btn;
+
     private void handleUpdateClick() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
@@ -211,13 +214,89 @@ public class HistoryMonthlyController implements Initializable {
     
     
     
+/////Back to dashboard
+    ///////////BACKKKK
+    
+    
+    
+      @FXML
+private void handleDashHIstoryButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+        Parent root = loader.load();
 
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+
+  @FXML
+private void handleDailyButton(ActionEvent event) {
+    try {
+        // Load the target FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("historytext.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene and stage
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+
+        // Apply initial black overlay
+        Rectangle fadeOverlay = new Rectangle(scene.getWidth(), scene.getHeight(), Color.BLACK);
+        fadeOverlay.widthProperty().bind(scene.widthProperty());
+        fadeOverlay.heightProperty().bind(scene.heightProperty());
+        ((Pane) root).getChildren().add(fadeOverlay);
+
+        stage.setScene(scene);
+        stage.show();
+
+        // Start fade-out animation
+        FadeTransition fadeOut = new FadeTransition(Duration.seconds(1.5), fadeOverlay);
+        fadeOut.setFromValue(1.0);  // Fully black
+        fadeOut.setToValue(0.0);    // Fully visible content
+        fadeOut.setInterpolator(Interpolator.EASE_BOTH);
+        fadeOut.setOnFinished(e -> ((Pane) root).getChildren().remove(fadeOverlay));
+        fadeOut.play();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+    
+    
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Platform.runLater(() -> {
             Stage stage = (Stage) staxkpane.getScene().getWindow();
             if (stage != null) {
-                stage.setMaximized(true);
+                stage.setFullScreen(true);
             }
             animateFirstPaneOpen();
             

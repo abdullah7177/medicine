@@ -81,7 +81,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 .add_btn:hover{
     
-    -fx-background-color: linear-gradient(to bottom right,#354172,#4c5c9d);
+    -fx-background-color: linear-gradient(to bottom right,#354172,#627bd0);
     -fx-text-fill: #fff;
 }
 
@@ -118,7 +118,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-radius: 4px;
 }
 .update_btn:hover{
-    -fx-background-color: #FB8C00;
+    -fx-background-color: linear-gradient(to right,#FB8C00,#e9af6e);
     -fx-text-fill: #fff;
 }
 
@@ -129,7 +129,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-radius: 4px;
 }
 .clear_btn:hover{
-    -fx-background-color: #757575;
+    -fx-background-color: linear-gradient(to right,#757575,#aa6e6e);
     -fx-text-fill: #fff;
 }
 
@@ -140,7 +140,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-radius: 4px;
 }
 .delete_btn:hover{
-    -fx-background-color: #7f0000;
+    -fx-background-color: linear-gradient(to right,#7f0000,#db6868);
     -fx-text-fill: #fff;
 }
 
@@ -155,16 +155,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: #fff;
 }
 .history_btn{
+   
     -fx-background-color: transparent;
     -fx-text-fill: #fff;
     -fx-border-color: #fff;
+    -fx-border-radius: 4px;
     
 }
 .history_btn:hover{
     
-    -fx-background-color: #fff;
-    -fx-text-fill: #354172;
-    -fx-border-color: #354172;
+   
+    -fx-background-color: linear-gradient(to right,#fff,#354172,#fff);
+   
     
 }
 
@@ -182,4 +184,41 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-border-color: transparent transparent #fff transparent; /* green underline on focus */
     -fx-border-width: 0 0 2px 0;
     -fx-prompt-text-fill: rgba(255,255,255,0.5); /* prompt text lighter on focus */
+}
+
+.dash_add_btns{
+    -fx-background-color: linear-gradient(to bottom right,#378b38,#65d765);
+    -fx-text-fill: #fff;
+}
+
+
+.dash_history_btns{
+    -fx-background-color: linear-gradient(to bottom right,#a36868,#8d8484);
+    -fx-text-fill: #fff;
+}
+
+
+.daily{
+    
+    -fx-background-color: #fff;
+    -fx-text-fill: #846f23;
+    -fx-border-color: #846f23;
+    -fx-border-radius: 4px;
+    
+}
+
+.daily:hover{
+    
+    -fx-background-color: linear-gradient(to right,#846f23,#d4b74e,#b59211);
+    -fx-text-fill: #fff;
+    
+}
+
+.logout{
+    
+    -fx-background-color: transparent;
+    
+}
+.logout:hover{
+    -fx-background-color: linear-gradient(to right,#846f23,#d4b74e,#b59211);
 }
