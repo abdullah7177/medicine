@@ -66,6 +66,9 @@ public class DashboardController implements Initializable {
         System.exit(0);
     }
 
+    
+    //kmcnvndfvjndf/
+    //njnvjxfvnj
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Platform.runLater(() -> {
