@@ -26,6 +26,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.geometry.Point3D;
+import javafx.scene.Cursor;
 
 public class FXMLDocumentController implements Initializable {
 
@@ -227,23 +228,28 @@ private void createAndAnimateStar() {
     }
 
     public void addstyle() {
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(500), add_product_btn);
-        scaleUp.setToX(1.2);
-        scaleUp.setToY(1.2);
+            ScaleTransition scaleUp = new ScaleTransition(Duration.millis(180), add_product_btn);
+    scaleUp.setToX(1.12);
+    scaleUp.setToY(1.12);
+    scaleUp.setInterpolator(Interpolator.EASE_OUT);
 
-        ScaleTransition scaleDown = new ScaleTransition(Duration.millis(500), add_product_btn);
-        scaleDown.setToX(1.0);
-        scaleDown.setToY(1.0);
+    ScaleTransition scaleDown = new ScaleTransition(Duration.millis(180), add_product_btn);
+    scaleDown.setToX(1.0);
+    scaleDown.setToY(1.0);
+    scaleDown.setInterpolator(Interpolator.EASE_IN);
 
-        add_product_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-            scaleDown.stop();
-            scaleUp.playFromStart();
-        });
+    add_product_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+        scaleDown.stop();
+        scaleUp.playFromStart();
+        add_product_btn.setCursor(Cursor.HAND); // 👈 changes mouse to hand
+    });
 
-        add_product_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-            scaleUp.stop();
-            scaleDown.playFromStart();
-        });
+    add_product_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+        scaleUp.stop();
+        scaleDown.playFromStart();
+        add_product_btn.setCursor(Cursor.DEFAULT); // back to normal
+    });
+
     }
 
     private void animatePaneBorder() {

@@ -16,6 +16,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -58,73 +59,107 @@ public class FirstAddTableController implements Initializable {
     private Button delete_btn;
     @FXML
     private Button backTo_add;
+    @FXML
+    private AnchorPane back;
+    @FXML
+    private Button close;
 
 
      public void Updatestyle(){
     
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(500), update_btn);
-scaleUp.setToX(1.2);
-scaleUp.setToY(1.2);
+         ScaleTransition scaleUp = new ScaleTransition(Duration.millis(180), update_btn);
+    scaleUp.setToX(1.12);
+    scaleUp.setToY(1.12);
+    scaleUp.setInterpolator(Interpolator.EASE_OUT);
 
-ScaleTransition scaleDown = new ScaleTransition(Duration.millis(500), update_btn);
-scaleDown.setToX(1.0);
-scaleDown.setToY(1.0);
+    ScaleTransition scaleDown = new ScaleTransition(Duration.millis(180), update_btn);
+    scaleDown.setToX(1.0);
+    scaleDown.setToY(1.0);
+    scaleDown.setInterpolator(Interpolator.EASE_IN);
 
-update_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-    scaleDown.stop();
-    scaleUp.playFromStart();
-});
+    update_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+        scaleDown.stop();
+        scaleUp.playFromStart();
+        update_btn.setCursor(Cursor.HAND); // 👈 changes mouse to hand
+    });
 
-update_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-    scaleUp.stop();
-    scaleDown.playFromStart();
-});
+    update_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+        scaleUp.stop();
+        scaleDown.playFromStart();
+        update_btn.setCursor(Cursor.DEFAULT); // back to normal
+    });
 
     }
      
-        public void Clearstyle(){
-    
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(500), clear_btn);
-scaleUp.setToX(1.2);
-scaleUp.setToY(1.2);
+ public void Clearstyle() {
 
-ScaleTransition scaleDown = new ScaleTransition(Duration.millis(500), clear_btn);
-scaleDown.setToX(1.0);
-scaleDown.setToY(1.0);
+    // Faster bounce effect
+    ScaleTransition scaleUp = new ScaleTransition(Duration.millis(180), clear_btn);
+    scaleUp.setToX(1.12);
+    scaleUp.setToY(1.12);
+    scaleUp.setInterpolator(Interpolator.EASE_OUT);
 
-clear_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-    scaleDown.stop();
-    scaleUp.playFromStart();
-});
+    ScaleTransition scaleDown = new ScaleTransition(Duration.millis(180), clear_btn);
+    scaleDown.setToX(1.0);
+    scaleDown.setToY(1.0);
+    scaleDown.setInterpolator(Interpolator.EASE_IN);
 
-clear_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-    scaleUp.stop();
-    scaleDown.playFromStart();
-});
+    clear_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+        scaleDown.stop();
+        scaleUp.playFromStart();
+        clear_btn.setCursor(Cursor.HAND); // 👈 changes mouse to hand
+    });
 
-    }
+    clear_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+        scaleUp.stop();
+        scaleDown.playFromStart();
+        clear_btn.setCursor(Cursor.DEFAULT); // back to normal
+    });
+}
+
+
         
 public void Deletestyle(){
     
-        ScaleTransition scaleUp = new ScaleTransition(Duration.millis(500), delete_btn);
-scaleUp.setToX(1.2);
-scaleUp.setToY(1.2);
+       ScaleTransition scaleUp = new ScaleTransition(Duration.millis(180), delete_btn);
+    scaleUp.setToX(1.12);
+    scaleUp.setToY(1.12);
+    scaleUp.setInterpolator(Interpolator.EASE_OUT);
 
-ScaleTransition scaleDown = new ScaleTransition(Duration.millis(500), delete_btn);
-scaleDown.setToX(1.0);
-scaleDown.setToY(1.0);
+    ScaleTransition scaleDown = new ScaleTransition(Duration.millis(180), delete_btn);
+    scaleDown.setToX(1.0);
+    scaleDown.setToY(1.0);
+    scaleDown.setInterpolator(Interpolator.EASE_IN);
 
-delete_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
-    scaleDown.stop();
-    scaleUp.playFromStart();
-});
+    delete_btn.addEventHandler(MouseEvent.MOUSE_ENTERED, e -> {
+        scaleDown.stop();
+        scaleUp.playFromStart();
+        delete_btn.setCursor(Cursor.HAND); // 👈 changes mouse to hand
+    });
 
-delete_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
-    scaleUp.stop();
-    scaleDown.playFromStart();
-});
+    delete_btn.addEventHandler(MouseEvent.MOUSE_EXITED, e -> {
+        scaleUp.stop();
+        scaleDown.playFromStart();
+        delete_btn.setCursor(Cursor.DEFAULT); // back to normal
+    });
 
     }
+
+public void cloose() {
+    // Change mouse to hand when hovering over the close button
+    close.setOnMouseEntered(e -> close.setCursor(Cursor.HAND));
+
+    // Return to default cursor when mouse exits
+    close.setOnMouseExited(e -> close.setCursor(Cursor.DEFAULT));
+}
+
+public void back() {
+    // Change mouse to hand when hovering over the close button
+    backTo_add.setOnMouseEntered(e -> backTo_add.setCursor(Cursor.HAND));
+
+    // Return to default cursor when mouse exits
+    backTo_add.setOnMouseExited(e -> backTo_add.setCursor(Cursor.DEFAULT));
+}
 
      
     
@@ -255,7 +290,6 @@ private void animatePaneBorder() {
     System.exit(0);
     }
     
-    @FXML
 private void handleUpdateClick() {
     try {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -390,5 +424,8 @@ private void createAndAnimateStar() {
         
         startStarAnimation();
         createAndAnimateStar();
+        
+        cloose();
+        back();
     }
 }

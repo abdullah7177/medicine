@@ -1,6 +1,7 @@
 package medicine;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,16 +10,24 @@ import javafx.stage.StageStyle;
 
 public class Medicine extends Application {
 
+    
+    
+    
+    
+    
+    
+  
+    
     @Override
     public void start(Stage stage) throws Exception {
         // Load the FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
         Parent root = loader.load();
 
         //firstAddTable
         //historyMonthly  FXMLDocument
       //  historytext
-        //dashboard
+        //dashboard   total_expenses
         
         
         

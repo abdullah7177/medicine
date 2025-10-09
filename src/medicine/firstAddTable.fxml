@@ -19,13 +19,13 @@
          <children>
             <AnchorPane fx:id="second_pane" prefHeight="703.0" prefWidth="1239.0">
                <children>
-                  <AnchorPane layoutX="5.0" layoutY="6.0" prefHeight="43.0" prefWidth="1186.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="8.666666666666742">
+                  <AnchorPane fx:id="back" layoutX="5.0" layoutY="6.0" prefHeight="43.0" prefWidth="1186.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="8.666666666666742">
                      <styleClass>
                         <String fx:value="white" />
                         <String fx:value="shadow" />
                      </styleClass>
                      <children>
-                        <Button layoutX="1113.0" layoutY="9.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="67.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="5.333333333333414" AnchorPane.topAnchor="9.0">
+                        <Button fx:id="close" layoutX="1113.0" layoutY="9.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="67.0" styleClass="red" stylesheets="@dashboard.css" AnchorPane.rightAnchor="5.333333333333414" AnchorPane.topAnchor="9.0">
                            <graphic>
                               <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
                            </graphic>
