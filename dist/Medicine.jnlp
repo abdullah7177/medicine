@@ -8,7 +8,11 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="Medicine.jar" size="64463" download="eager" />
+=======
+    <jar href="Medicine.jar" size="61580" download="eager" />
+>>>>>>> f9a8485d83845387bbe00a123b8abe76a8c9b3a2
     <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib\itextpdf-5.5.13.2.jar" size="2331438" download="eager" />
     <jar href="lib\mysql-connector-j-9.0.0.jar" size="2590119" download="eager" />

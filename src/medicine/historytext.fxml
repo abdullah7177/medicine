@@ -56,13 +56,13 @@
                               <Font name="Tahoma" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="169.0" layoutY="72.0" prefHeight="33.0" prefWidth="270.0" styleClass="text-fieldss" stylesheets="@dashboard.css" />
+                        <TextField fx:id="daily_expense_description" layoutX="169.0" layoutY="72.0" prefHeight="33.0" prefWidth="270.0" styleClass="text-fieldss" stylesheets="@dashboard.css" />
                         <Label layoutX="61.0" layoutY="138.0" text="Amount:" textFill="WHITE">
                            <font>
                               <Font name="Tahoma" size="18.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="169.0" layoutY="121.0" prefHeight="33.0" prefWidth="270.0" styleClass="text-fieldss" stylesheets="@dashboard.css" />
+                        <TextField fx:id="daily_expense_amnt" layoutX="169.0" layoutY="121.0" prefHeight="33.0" prefWidth="270.0" styleClass="text-fieldss" stylesheets="@dashboard.css" />
                         <Button fx:id="daily_add" layoutX="87.0" layoutY="256.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="305.0" styleClass="history_btn" stylesheets="@dashboard.css" text="Add" textFill="#354172">
                            <font>
                               <Font name="Tahoma" size="22.0" />

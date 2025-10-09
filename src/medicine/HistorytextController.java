@@ -43,6 +43,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
@@ -83,6 +84,10 @@ public class HistorytextController implements Initializable {
     private AnchorPane daly_table_pane;
     @FXML
     private Button back_to_month;
+    @FXML
+    private TextField daily_expense_description;
+    @FXML
+    private TextField daily_expense_amnt;
 
     /**
      * Initializes the controller class.

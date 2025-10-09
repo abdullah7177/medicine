@@ -60,6 +60,8 @@ public class DashboardController implements Initializable {
     private Button historyBtn;
     @FXML
     private ImageView hostoryimage;
+    @FXML
+    private Button log_out;
 
     @FXML
     public void close() {
