@@ -17,7 +17,7 @@
 
             <children>
                 <!-- Second AnchorPane full screen -->
-                <AnchorPane fx:id="anchor_two" maxHeight="Infinity" maxWidth="Infinity" prefHeight="670.0" prefWidth="1200.0" styleClass="white" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <AnchorPane fx:id="anchor_two" layoutX="-1.0" maxHeight="Infinity" maxWidth="Infinity" prefHeight="670.0" prefWidth="1200.0" styleClass="white" stylesheets="@dashboard.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
             <AnchorPane prefHeight="46.0" prefWidth="1200.0" stylesheets="@dashboard.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <styleClass>
                   <String fx:value="shadow" />

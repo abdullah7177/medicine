@@ -15,6 +15,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,.5), 6,0,0,0);   
     
 }
+
+.shadows{
+    
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6, 0, 3, 3);
+
+    
+}
 .red{
     
     -fx-background-color: transparent;
@@ -77,12 +84,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #fff;
     -fx-text-fill: #354172;
     -fx-border-color: #354172;
+    -fx-border-radius: 15px;
     
 }
 .add_btn:hover{
     
     -fx-background-color: linear-gradient(to bottom right,#354172,#627bd0);
     -fx-text-fill: #fff;
+    -fx-border-radius: 15px;
+     
 }
 
 
@@ -189,12 +199,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .dash_add_btns{
     -fx-background-color: linear-gradient(to bottom right,#378b38,#65d765);
     -fx-text-fill: #fff;
+    -fx-border-radius: 8px;
 }
 
 
 .dash_history_btns{
     -fx-background-color: linear-gradient(to bottom right,#a36868,#8d8484);
     -fx-text-fill: #fff;
+    -fx-border-radius: 8px;
 }
 
 
@@ -221,4 +233,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 .logout:hover{
     -fx-background-color: linear-gradient(to right,#846f23,#d4b74e,#b59211);
+}
+
+.orange{
+    
+    -fx-background-color: linear-gradient(to left,#f8e2d0,#fdede0);
+    
+}
+
+.blue{
+   -fx-background-color: #2c3b5e;
+    
+}
+
+.grey{
+    
+    -fx-background-color: transparent;
+    
+}
+
+
+.grey:hover{
+    
+    -fx-background-color: gray;
+    
 }
