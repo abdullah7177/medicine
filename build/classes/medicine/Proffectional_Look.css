@@ -1,0 +1,197 @@
+/* === General Font === */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* === Sidebar Background === */
+.sidebar {
+    -fx-background-color: #2B3E4D;
+    -fx-padding: 20;
+}
+
+/* === Profile Section === */
+.profile-section {
+    -fx-alignment: center;
+    -fx-padding: 30 0 20 0;
+}
+
+.profile-name {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.profile-email {
+    -fx-text-fill: #CCCCCC;
+    -fx-font-size: 12px;
+}
+
+/* === Menu Buttons === */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    /*-fx-pref-width: 200%;*/
+    -fx-alignment: center-left;
+    -fx-padding: 10 15;
+    -fx-graphic-text-gap: 10;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    /*-fx-font-weight: bold;*/
+}
+
+.menu-button:hover {
+    -fx-background-color: #3A4F63;
+    -fx-cursor: hand;
+}
+
+/* === Close Button === */
+.close-btn {
+    -fx-background-color: transparent;
+    
+}
+.close-btn:hover{
+    -fx-background-color: red;
+    
+}
+
+.orange{
+    
+    -fx-background-color: linear-gradient(to right,#fff4e7,#ffe8cd,#fff4e7);
+    
+}
+.shadow{
+ -fx-effect: dropshadow(gaussian, rgba(255, 200, 120, 0.35), 8, 0.3, 0, 3);
+}
+
+.add_button {
+    -fx-background-color: #F5B971;  /* soft warm orange */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 17px;            /* increased text size */
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;         /* more balanced padding */
+    -fx-effect: dropshadow(gaussian, rgba(245, 185, 113, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+.add_button:hover {
+    -fx-background-color: #FFC47E;  /* lighter on hover */
+    -fx-effect: dropshadow(gaussian, rgba(255, 196, 126, 0.6), 10, 0.5, 0, 4);
+}
+
+.update_button {
+    -fx-background-color: #4A90E2;  /* professional light blue */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;
+    -fx-effect: dropshadow(gaussian, rgba(74, 144, 226, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+.update_button:hover {
+    -fx-background-color: #5AA5F2;  /* lighter blue on hover */
+    -fx-effect: dropshadow(gaussian, rgba(90, 165, 242, 0.6), 10, 0.5, 0, 4);
+}
+
+.delete_button {
+    -fx-background-color: #E57373;   /* soft warm red */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;
+    -fx-effect: dropshadow(gaussian, rgba(229, 115, 115, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+.delete_button:hover {
+    -fx-background-color: #EF5350;   /* slightly brighter red on hover */
+    -fx-effect: dropshadow(gaussian, rgba(239, 83, 80, 0.6), 10, 0.5, 0, 4);
+}
+
+.today_button {
+    -fx-background-color: #81C784;   /* soft green tone for freshness */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;
+    -fx-effect: dropshadow(gaussian, rgba(129, 199, 132, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+.today_button:hover {
+    -fx-background-color: #9CCC65;   /* lighter on hover */
+    -fx-effect: dropshadow(gaussian, rgba(156, 204, 101, 0.6), 10, 0.5, 0, 4);
+}
+
+
+.add_anchor {
+    -fx-background-color: #ffebd4;   /* soft light orange background */
+    -fx-background-radius: 12px;
+/*    -fx-effect: dropshadow(gaussian, rgba(245, 185, 113, 0.25), 10, 0.3, 0, 3);*/
+-fx-effect: dropshadow(gaussian, rgba(245, 185, 113, 0.25), 10, 0.3, 0, 0);
+
+}
+
+
+.add_textfield {
+    -fx-background-color: #FFF8EF;      /* very light cream for soft contrast */
+    -fx-text-fill: #4A2C00;             /* same elegant brown as label */
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #F5B971;          /* matches your Add button */
+    -fx-border-radius: 8px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 6px 10px;
+}
+
+.add_textfield:focused {
+    -fx-border-color: #E8A94E;          /* slightly darker orange on focus */
+    -fx-effect: dropshadow(gaussian, rgba(245, 185, 113, 0.4), 6, 0.3, 0, 2);
+}
+
+.addData_button {
+    -fx-background-color: #F5B971;  /* warm orange/yellow */
+    -fx-text-fill: #ffffff;          /* white text for contrast */
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;
+    -fx-effect: dropshadow(gaussian, rgba(245, 185, 113, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+
+.addData_button:hover {
+    -fx-background-color: #FFDFAF;  /* lighter on hover */
+    -fx-effect: dropshadow(gaussian, rgba(255, 223, 175, 0.6), 10, 0.5, 0, 4);
+}
+
+.addData_button:pressed {
+    -fx-background-color: #FFCC66;  /* darker shade when pressed */
+}
+
+.clear_button {
+    -fx-background-color: #FF6B6B;  /* soft red for "clear/danger" */
+    -fx-text-fill: #ffffff;          /* white text */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 10px 24px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 107, 0.4), 6, 0.4, 0, 2);
+    -fx-border-color: transparent;
+}
+
+.clear_button:hover {
+    -fx-background-color: #FF8B8B;  /* lighter red on hover */
+    -fx-effect: dropshadow(gaussian, rgba(255, 139, 139, 0.6), 10, 0.5, 0, 4);
+}
+
+.clear_button:pressed {
+    -fx-background-color: #FF4C4C;  /* darker red when pressed */
+}

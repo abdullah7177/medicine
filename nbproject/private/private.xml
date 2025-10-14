@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/DashboardController.java</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/Billing_Point.fxml</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/Billing_PointController.java</file>
             <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/animation.java</file>
             <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/Medicine.java</file>
-            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/dashboard.css</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/Proffectional_Look.css</file>
+            <file>file:/C:/Users/user/OneDrive/Documents/NetBeansProjects/Medicine/src/medicine/Add_Product.fxml</file>
         </group>
     </open-files>
 </project-private>
