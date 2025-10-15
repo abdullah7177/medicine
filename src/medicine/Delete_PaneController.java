@@ -7,7 +7,7 @@ package medicine;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,22 +22,27 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class Add_ProductController implements Initializable {
+
+
+
+public class Delete_PaneController implements Initializable {
 
     @FXML
-    private AnchorPane Add_Pane;
+    private AnchorPane Delete_pane;
     @FXML
-    private Button CLOSE;
+    private Button close;
 
     /**
      * Initializes the controller class.
      */
-     @FXML
-     private void OpenDashboard() {
+    
+    
+    @FXML
+      private void OpenDashboard() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Billing_Point.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) CLOSE.getScene().getWindow();
+            Stage stage = (Stage) close.getScene().getWindow();
             stage.setScene(new Scene(root));
             
             stage.setMaximized(true);
@@ -48,24 +53,16 @@ public class Add_ProductController implements Initializable {
             e.printStackTrace();
         }
     }
+   
     
-    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-             Platform.runLater(() -> {
-        Stage stage = (Stage) Add_Pane.getScene().getWindow();
-        if (stage != null) {
-            stage.setFullScreen(true);
-        }
-    });
-           
-        
-    
     }    
-    
-    
-    
+
+    @FXML
+    private void close(ActionEvent event) {
+    }
     
 }

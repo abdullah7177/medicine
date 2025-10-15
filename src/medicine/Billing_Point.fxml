@@ -16,7 +16,7 @@
 <StackPane fx:id="Billing_StackPane" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicine.Billing_PointController">
     
     <children>
-        <AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@Proffectional_Look.css">
+        <AnchorPane fx:id="Dashboard" prefHeight="600.0" prefWidth="1200.0" stylesheets="@Proffectional_Look.css">
             <!-- Sidebar -->
             <VBox fx:id="sidebar" prefWidth="250" spacing="20" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                 
@@ -76,7 +76,7 @@
             <children>
       
                   <!-- Top Right Close Button -->
-                  <Button fx:id="close_Btn" layoutX="839.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="63.0" styleClass="close-btn" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                  <Button fx:id="close_Btn" layoutX="839.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="41.0" prefWidth="79.0" styleClass="close_button" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                       <graphic>
                           <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
                       </graphic>
@@ -86,8 +86,8 @@
                      <Font size="21.0" />
                   </font>
                </Button>
-               <Button layoutX="513.0" layoutY="291.0" mnemonicParsing="false" prefHeight="170.0" prefWidth="160.0" styleClass="delete_button" stylesheets="@Proffectional_Look.css" text="Detele" />
-               <Button layoutX="322.0" layoutY="291.0" mnemonicParsing="false" prefHeight="170.0" prefWidth="160.0" styleClass="update_button" stylesheets="@Proffectional_Look.css" text="Update" />
+               <Button fx:id="Delete_Btn" layoutX="513.0" layoutY="291.0" mnemonicParsing="false" onAction="#OpenDelete" prefHeight="170.0" prefWidth="160.0" styleClass="delete_button" stylesheets="@Proffectional_Look.css" text="Detele" />
+               <Button fx:id="Update_Btn" layoutX="322.0" layoutY="291.0" mnemonicParsing="false" onAction="#OpenUpdate" prefHeight="170.0" prefWidth="160.0" styleClass="update_button" stylesheets="@Proffectional_Look.css" text="Update" />
                <AnchorPane layoutX="14.0" layoutY="18.0" prefHeight="214.0" prefWidth="391.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="Welcome Back!">

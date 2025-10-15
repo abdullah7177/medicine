@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,22 +23,27 @@ import javafx.stage.Stage;
  *
  * @author user
  */
-public class Add_ProductController implements Initializable {
+public class Update_paneController implements Initializable {
 
     @FXML
-    private AnchorPane Add_Pane;
+    private StackPane Update_Stackepane;
     @FXML
-    private Button CLOSE;
+    private AnchorPane Update_Pane;
+    private Button back_to_dashboard;
+    @FXML
+    private Button close;
 
     /**
      * Initializes the controller class.
      */
-     @FXML
+    
+    
+    @FXML
      private void OpenDashboard() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Billing_Point.fxml"));
             Parent root = loader.load();
-            Stage stage = (Stage) CLOSE.getScene().getWindow();
+            Stage stage = (Stage) close.getScene().getWindow();
             stage.setScene(new Scene(root));
             
             stage.setMaximized(true);
@@ -48,24 +54,17 @@ public class Add_ProductController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-    
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-             Platform.runLater(() -> {
-        Stage stage = (Stage) Add_Pane.getScene().getWindow();
+                Platform.runLater(() -> {
+        Stage stage = (Stage) Update_Pane.getScene().getWindow();
         if (stage != null) {
             stage.setFullScreen(true);
         }
     });
-           
         
-    
     }    
-    
-    
-    
     
 }
