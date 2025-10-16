@@ -64,7 +64,7 @@ public class Update_paneController implements Initializable {
             stage.setFullScreen(true);
         }
     });
-        
+
     }    
     
 }

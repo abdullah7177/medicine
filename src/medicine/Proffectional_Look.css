@@ -6,13 +6,13 @@
 /* === Sidebar Background === */
 .sidebar {
     -fx-background-color: #2B3E4D;
-    -fx-padding: 20;
+    -fx-padding: 10;
 }
 
 /* === Profile Section === */
 .profile-section {
     -fx-alignment: center;
-    -fx-padding: 30 0 20 0;
+    -fx-padding: 30 0 10 0;
 }
 
 .profile-name {
@@ -207,7 +207,7 @@
     
     -fx-background-color: #a5c8ff;
         -fx-background-radius: 15px;    /* rounded corners */
-    -fx-padding: 12px;               /*inner spacing */
+    /*-fx-padding: 12px;               inner spacing */
     -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 10, 0.4, 0, 2); /* subtle shadow */
 }
 .update_pane_label {
@@ -261,7 +261,7 @@
     -fx-background-radius: 10px;
     -fx-border-color: #4A90E2;           /* subtle border */
     -fx-border-radius: 10px;
-    -fx-padding: 6px 10px;               /* inner spacing */
+    /*-fx-padding: 6px 10px;                inner spacing */
     -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 4, 0.4, 0, 2); /* subtle shadow */
 }
 
@@ -301,7 +301,7 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-background-radius: 10px;
-    -fx-padding: 10px 24px;
+    /*-fx-padding: 10px 24px;*/
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.4),6,0.4,0,2);
 }
@@ -474,3 +474,33 @@
     -fx-background-color: #E6A64F;  /* darker shade when pressed */
 }
 
+.tree-view {
+    -fx-background-color: #2B3E4D;
+    -fx-control-inner-background: #2B3E4D;
+    -fx-border-color: #4C6A82;      /* border color */
+    -fx-border-width: 2;            /* border thickness */
+    -fx-border-radius: 8;           /* rounded corners */
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+
+    /* Drop shadow for depth */
+    -fx-effect: dropshadow(gaussian, rgba(76, 106, 130, 0.6), 10, 0.3, 0, 3);
+}
+
+/* TreeCells (items inside the TreeView) */
+.tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+/* Hover effect for each cell */
+.tree-cell:hover {
+    -fx-background-color: #3C5264;
+}
+
+/* When an item is selected */
+.tree-cell:selected {
+    -fx-background-color: #4C6A82;
+    -fx-text-fill: white;
+}
