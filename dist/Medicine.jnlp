@@ -8,11 +8,22 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+<<<<<<< HEAD
     <jar href="Medicine.jar" size="196388" download="eager" />
+=======
+    <jar href="Medicine.jar" size="194468" download="eager" />
+    <jar href="lib\connector.jar" size="31783" download="eager" />
+>>>>>>> 42ffedefebae1beffe40a32eac94ab74672f704d
     <jar href="lib\fontawesomefx-8.2.jar" size="180341" download="eager" />
     <jar href="lib\itextpdf-5.5.13.2.jar" size="2331438" download="eager" />
     <jar href="lib\mysql-connector-j-9.0.0.jar" size="2590119" download="eager" />
     <jar href="lib\ojdbc6-11.2.0.2.0.jar" size="2152051" download="eager" />
+    <jar href="lib\ons.jar" size="48492" download="eager" />
+    <jar href="lib\oraclepki.jar" size="111632" download="eager" />
+    <jar href="lib\orai18n-mapping.jar" size="82953" download="eager" />
+    <jar href="lib\orai18n.jar" size="1655734" download="eager" />
+    <jar href="lib\xdb6.jar" size="263097" download="eager" />
+    <jar href="lib\xmlparserv2.jar" size="1211311" download="eager" />
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="medicine.Medicine"  name="Medicine" />
   <update check="always"/>
