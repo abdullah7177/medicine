@@ -196,80 +196,111 @@
     -fx-background-color: #FF4C4C;  /* darker red when pressed */
 }
 
+/* ===============================
+   UPDATE PANE BACKGROUND
+=============================== */
 .update_pane {
-    -fx-background-color: #E8F0FE; /* very light blue, soft and clean */
-    -fx-background-radius: 15px;    /* rounded corners */
-    /*-fx-padding: 20px;               inner spacing */
-    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 10, 0.4, 0, 2); /* subtle shadow */
+    -fx-background-color: #ffebd4; /* soft peach */
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 150, 80, 0.25), 10, 0.4, 0, 2);
 }
 
-.Update_Btn{
-    
-    -fx-background-color: #a5c8ff;
-        -fx-background-radius: 15px;    /* rounded corners */
-    /*-fx-padding: 12px;               inner spacing */
-    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 10, 0.4, 0, 2); /* subtle shadow */
-}
-.update_pane_label {
-    -fx-text-fill: #2A3F63;  /* darker blue for good contrast */
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-}
-
-/* TableView background */
-.update_pane_table {
-    -fx-background-color: #D6E1FF;  /* slightly darker than pane */
-    -fx-border-color: #4A90E2;      /* subtle border */
-    -fx-border-radius: 10px;
+/* ===============================
+   UPDATE TEXTFIELDS
+=============================== */
+.update_textfield {
+    -fx-background-color: white;
     -fx-background-radius: 10px;
-}
-
-/* Table header */
-.update_pane_table .column-header-background {
-    -fx-background-color: #4A90E2;   /* same as update button */
-}
-
-.update_pane_table .column-header, 
-.update_pane_table .column-header .label {
-    -fx-text-fill: #1F2D4D;          /* dark blue text */
+    -fx-border-radius: 10px;
+    -fx-border-color: #f4a261;
+    -fx-border-width: 1.5px;
     -fx-font-size: 14px;
+    -fx-prompt-text-fill: #b4b4b4;
+    -fx-text-fill: #333;
+    -fx-padding: 6px 10px;
+}
+
+.update_textfield:focused {
+    -fx-border-color: #ff9800;
+    -fx-effect: dropshadow(gaussian, rgba(255,152,0,0.3), 6, 0.3, 0, 0);
+}
+
+/* ===============================
+   UPDATE BUTTONS
+=============================== */
+.update_button {
+    -fx-background-color: linear-gradient(to bottom, #f5b971, #f1a85b);
+    -fx-text-fill: white;
     -fx-font-weight: bold;
-}
-
-/* Table cells */
-.update_pane_table .cell {
-    -fx-background-color: #E8F0FE;   /* lighter than pane for contrast */
-    -fx-text-fill: #2A3F63;          /* dark text */
-    -fx-font-size: 13px;
-}
-
-/* Row hover effect */
-.update_pane_table .table-row-cell:hover {
-    -fx-background-color: #C0D4FF;  /* slightly darker highlight */
-}
-
-/* Selected row */
-.update_pane_table .table-row-cell:selected {
-    -fx-background-color: #5AA5F2;  /* matches button hover */
-    -fx-text-fill: #FFFFFF;          /* white text for selected */
-}
-
-.update_pane_textfield {
-    -fx-background-color: #D6E1FF;      /* slightly darker than pane */
-    -fx-text-fill: #1F2D4D;              /* dark text */
     -fx-font-size: 15px;
     -fx-background-radius: 10px;
-    -fx-border-color: #4A90E2;           /* subtle border */
+    -fx-cursor: hand;
+    -fx-padding: 8px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(240,140,50,0.25), 6, 0.4, 0, 2);
+    -fx-border-width: 0;
+}
+
+.update_button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffd28f, #f0a04b);
+    -fx-effect: dropshadow(gaussian, rgba(240,140,50,0.45), 10, 0.5, 0, 3);
+}
+
+.update_button:pressed {
+    -fx-background-color: #f0a04b;
+    -fx-effect: none;
+}
+
+/* ===============================
+   UPDATE TABLEVIEW
+=============================== */
+.update_table {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: #f4a261;
     -fx-border-radius: 10px;
-    /*-fx-padding: 6px 10px;                inner spacing */
-    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 4, 0.4, 0, 2); /* subtle shadow */
+    -fx-border-width: 1.5px;
+    -fx-padding: 5px;
+    -fx-table-cell-border-color: transparent;
 }
 
-.update_pane_textfield:focused {
-    -fx-border-color: #5AA5F2;           /* lighter blue on focus */
-    -fx-effect: dropshadow(gaussian, rgba(90,165,242,0.3), 6, 0.5, 0, 3); /* slightly stronger shadow on focus */
+.update_table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #ffd28f, #f5b971);
+    -fx-background-radius: 10px 10px 0 0;
 }
 
+.update_table .column-header, 
+.update_table .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a4a4a;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+}
+
+.update_table .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+}
+
+.update_table .table-row-cell:odd {
+    -fx-background-color: #fff6ef;
+}
+
+.update_table .table-row-cell:selected {
+    -fx-background-color: #f5b971;
+    -fx-text-fill: white;
+}
+
+/* ===============================
+   SCROLLBAR (optional)
+=============================== */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.thumb {
+    -fx-background-color: #f5b971;
+    -fx-background-radius: 10px;
+}
 
 .minimize_button {
     -fx-background-color: #4A90E2;    /* same as update theme blue */
@@ -531,4 +562,245 @@
 .update_pane_textfields:focused {
     -fx-border-color: #5AA5F2;           /* lighter blue on focus */
     -fx-effect: dropshadow(gaussian, rgba(90,165,242,0.3), 6, 0.5, 0, 3); /* slightly stronger shadow on focus */
+}
+
+
+/* ===============================
+   🌸 GLOBAL THEME (Soft Peach)
+   =============================== */
+
+.add_root {
+    -fx-background-color: #ffebd4;
+    -fx-font-family: "Poppins", "Segoe UI", "Arial";
+    -fx-text-fill: #333333;
+}
+
+/* ===============================
+   ✏️ TEXTFIELDS
+   =============================== */
+.addtext-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #ffc799;
+    -fx-border-width: 1.5;
+    -fx-prompt-text-fill: #b6b6b6;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10 6 10;
+    -fx-effect: dropshadow(gaussian, rgba(255, 190, 130, 0.15), 5, 0, 0, 1);
+}
+
+.addtext-field:focused {
+    -fx-border-color: #ff9d5c;
+    -fx-effect: dropshadow(gaussian, rgba(255, 157, 92, 0.4), 10, 0, 0, 2);
+}
+
+/* ===============================
+   🔘 BUTTONS
+   =============================== */
+.addbutton {
+    -fx-background-color: linear-gradient(to right, #ffa366, #ff9248);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 153, 0, 0.3), 8, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
+}
+
+.addbutton:hover {
+    -fx-background-color: linear-gradient(to right, #ff9248, #ff7b29);
+    -fx-effect: dropshadow(gaussian, rgba(255, 128, 0, 0.5), 10, 0, 0, 3);
+}
+
+.addbutton:pressed {
+    -fx-background-color: #e67324;
+    -fx-effect: none;
+}
+
+/* ===============================
+   📋 TABLEVIEW
+   =============================== */
+/* 🌸 Stylish TableView: add_table */
+.add_table {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #ffc799;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(255, 190, 130, 0.25), 8, 0, 0, 2);
+}
+
+/* Header background and text */
+.add_table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #ffe3c4, #ffd7a0);
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-color: #ffb766;
+    -fx-border-width: 0 0 2 0;
+}
+
+.add_table .column-header,
+.add_table .filler {
+    -fx-size: 35px;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+.add_table .column-header .label {
+    -fx-text-fill: #4a2e0a;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER;
+}
+
+/* Rows */
+.add_table .table-row-cell {
+    -fx-background-color: #fffaf5;
+    -fx-border-color: transparent transparent #ffe7c7 transparent;
+}
+
+.add_table .table-row-cell:selected {
+    -fx-background-color: #ffd4a0;
+}
+
+.add_table .table-row-cell:hover {
+    -fx-background-color: #ffe1ba;
+}
+
+
+.addsearch {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #ffc799;
+    -fx-border-width: 1.5;
+    -fx-prompt-text-fill: #b6b6b6;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-padding:6px 10px 10px 25px;
+    -fx-effect: dropshadow(gaussian, rgba(255, 190, 130, 0.15), 5, 0, 0, 1);
+}
+
+.addsearch:focused {
+    -fx-border-color: #ff9d5c;
+    -fx-effect: dropshadow(gaussian, rgba(255, 157, 92, 0.4), 10, 0, 0, 2);
+}
+
+
+/* ===============================
+   HISTORY PANE BACKGROUND
+=============================== */
+.history_pane {
+    -fx-background-color: #dfe8f5; /* soft baby blue background */
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(39,77,119,0.25), 10, 0.4, 0, 2);
+}
+
+/* ===============================
+   HISTORY TEXTFIELDS
+=============================== */
+.history_textfield {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #a8c1e3;
+    -fx-border-width: 1.5px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #a0a0a0;
+    -fx-text-fill: #2d2d2d;
+    -fx-padding: 6px 10px;
+    -fx-effect: dropshadow(gaussian, rgba(39,77,119,0.1), 5, 0.3, 0, 1);
+}
+
+.history_textfield:focused {
+    -fx-border-color: #274d77;
+    -fx-effect: dropshadow(gaussian, rgba(39,77,119,0.4), 8, 0.4, 0, 2);
+}
+
+/* ===============================
+   HISTORY BUTTONS
+=============================== */
+.history_button {
+    -fx-background-color: linear-gradient(to bottom, #3c6ca3, #274d77);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-padding: 8px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(39,77,119,0.25), 8, 0.4, 0, 3);
+}
+
+.history_button:hover {
+    -fx-background-color: linear-gradient(to bottom, #4e7fbf, #305b8d);
+    -fx-effect: dropshadow(gaussian, rgba(39,77,119,0.45), 10, 0.5, 0, 3);
+}
+
+.history_button:pressed {
+    -fx-background-color: #274d77;
+    -fx-effect: none;
+}
+
+/* ===============================
+   HISTORY TABLEVIEW
+=============================== */
+.history_table {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-color: #a8c1e3;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 5px;
+    -fx-table-cell-border-color: transparent;
+}
+
+.history_table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #c7d8ef, #b6cdec);
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.history_table .column-header,
+.history_table .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #274d77;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+}
+
+.history_table .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #333333;
+}
+
+.history_table .table-row-cell:odd {
+    -fx-background-color: #f5f8fd;
+}
+
+.history_table .table-row-cell:selected {
+    -fx-background-color: #274d77;
+    -fx-text-fill: white;
+}
+
+/* ===============================
+   SCROLLBAR (optional)
+=============================== */
+.scroll-bar:vertical, .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.thumb {
+    -fx-background-color: #3c6ca3;
+    -fx-background-radius: 10px;
+}
+
+.dashboard_clock {
+    -fx-text-fill: #274d77;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI", "Poppins", sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 1, 1);
 }

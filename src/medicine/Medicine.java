@@ -36,7 +36,7 @@ public class Medicine extends Application {
 
 //         ✅ Keep window buttons (minimize, maximize, close)
 //        stage.setResizable(true);
-//        stage.setMaximized(true); // Full-screen effect but keeps window controls
+        stage.setMaximized(true); // Full-screen effect but keeps window controls
         stage.initStyle(StageStyle.UNDECORATED);
         // ❌ DO NOT use fullScreen mode
 //         stage.setFullScreen(true);

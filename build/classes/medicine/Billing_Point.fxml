@@ -60,16 +60,9 @@
                           <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
                       </graphic>
                   </Button>
-               <Button fx:id="Add_Btn" layoutX="129.0" layoutY="291.0" mnemonicParsing="false" onAction="#OpenAdd" prefHeight="170.0" prefWidth="160.0" styleClass="add_button" stylesheets="@Proffectional_Look.css" text="Add">
-                  <font>
-                     <Font size="21.0" />
-                  </font>
-               </Button>
-               <Button fx:id="Delete_Btn" layoutX="513.0" layoutY="291.0" mnemonicParsing="false" onAction="#OpenDelete" prefHeight="170.0" prefWidth="160.0" styleClass="delete_button" stylesheets="@Proffectional_Look.css" text="Detele" />
-               <Button fx:id="Update_Btn" layoutX="322.0" layoutY="291.0" mnemonicParsing="false" onAction="#OpenUpdate" prefHeight="170.0" prefWidth="160.0" styleClass="update_button" stylesheets="@Proffectional_Look.css" text="Update" />
                <AnchorPane layoutX="14.0" layoutY="18.0" prefHeight="214.0" prefWidth="391.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0">
                   <children>
-                     <Label layoutX="14.0" layoutY="14.0" text="Welcome Back!">
+                     <Label layoutX="14.0" layoutY="14.0" text="Add Products">
                         <font>
                            <Font size="31.0" />
                         </font>
@@ -80,7 +73,6 @@
                      <String fx:value="shadow" />
                   </styleClass>
                </AnchorPane>
-               <Button layoutX="711.0" layoutY="291.0" mnemonicParsing="false" prefHeight="170.0" prefWidth="160.0" styleClass="today_button" stylesheets="@Proffectional_Look.css" text="Daily Expenses" />
             </children>
          </AnchorPane>
          <AnchorPane fx:id="Tree_Dash" layoutX="250.0" layoutY="100.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -93,6 +85,11 @@
                         </font>
                      </Label>
                      <Separator layoutX="5.0" layoutY="66.0" prefHeight="3.0" prefWidth="357.0" />
+                  </children>
+               </AnchorPane>
+               <AnchorPane layoutX="782.0" layoutY="69.0" prefHeight="310.0" prefWidth="153.0">
+                  <children>
+                     <Label fx:id="dashboardClock" layoutX="57.0" layoutY="61.0" styleClass="dashboard_clock" text="Label" />
                   </children>
                </AnchorPane>
             </children>
@@ -138,49 +135,54 @@
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="update_pane" layoutX="250.0" layoutY="54.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="update_pane" layoutX="250.0" layoutY="54.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="280.0" layoutY="14.0" prefHeight="70.0" prefWidth="300.0" styleClass="Update_Btn" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="285.0">
+               <AnchorPane layoutX="280.0" layoutY="14.0" prefHeight="70.0" prefWidth="300.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="280.0" AnchorPane.rightAnchor="285.0">
                   <children>
-                     <Label layoutX="140.0" layoutY="16.0" prefHeight="27.0" prefWidth="149.0" styleClass="update_pane_label" stylesheets="@Proffectional_Look.css" text="Update Product" />
+                     <Label layoutX="140.0" layoutY="16.0" prefHeight="27.0" prefWidth="149.0" styleClass="update_pane_label" stylesheets="@Proffectional_Look.css" text="Update Product" textFill="#533d2d" />
                      <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="314.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/frequent.png" />
                         </image>
                      </ImageView>
                   </children>
+                  <styleClass>
+                     <String fx:value="add_root" />
+                     <String fx:value="shadow" />
+                  </styleClass>
                </AnchorPane>
-               <TableView layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="927.0" styleClass="update_pane_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+               <TableView layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="927.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
+                     <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
-               <TextField layoutX="14.0" layoutY="318.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="359.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="400.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="441.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="482.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="523.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="318.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="359.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="400.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="736.0" layoutY="314.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="355.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="396.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="437.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="478.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="519.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="522.0" layoutY="314.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <TextField layoutX="522.0" layoutY="355.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <TextField layoutX="522.0" layoutY="396.0" prefWidth="200.0" styleClass="update_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <Button layoutX="326.0" layoutY="466.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="320.0" styleClass="update_pane_button" stylesheets="@Proffectional_Look.css" text="Update" AnchorPane.bottomAnchor="86.66666666666666" />
+               <TextField layoutX="14.0" layoutY="318.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="359.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="400.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="441.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="482.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="523.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="226.0" layoutY="318.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="226.0" layoutY="359.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="226.0" layoutY="400.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="736.0" layoutY="314.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="736.0" layoutY="355.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="736.0" layoutY="396.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="736.0" layoutY="437.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="736.0" layoutY="478.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="736.0" layoutY="519.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="522.0" layoutY="314.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+               <TextField layoutX="522.0" layoutY="355.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+               <TextField layoutX="522.0" layoutY="396.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+               <Button layoutX="326.0" layoutY="466.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="320.0" styleClass="addData_button" stylesheets="@Proffectional_Look.css" text="Update" AnchorPane.bottomAnchor="86.66666666666666" />
                <Button layoutX="326.0" layoutY="533.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="320.0" styleClass="clear_button" stylesheets="@Proffectional_Look.css" text="Clear" AnchorPane.bottomAnchor="28.0" />
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="delete_pane" layoutX="250.0" layoutY="111.0" prefHeight="600.0" prefWidth="950.0" styleClass="delete_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="delete_pane" layoutX="249.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_root" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="296.0" layoutY="14.0" prefHeight="80.0" prefWidth="357.0" styleClass="deleteted_pane" stylesheets="@Proffectional_Look.css">
+               <AnchorPane layoutX="296.0" layoutY="14.0" prefHeight="80.0" prefWidth="357.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css">
                   <children>
                      <Label layoutX="104.0" layoutY="22.0" styleClass="delete_pane_label" stylesheets="@Proffectional_Look.css" text="Delete Product" />
                      <ImageView fitHeight="57.0" fitWidth="89.0" layoutX="258.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
@@ -190,50 +192,50 @@
                      </ImageView>
                   </children>
                </AnchorPane>
-               <TableView layoutX="14.0" layoutY="106.0" prefHeight="200.0" prefWidth="922.0" styleClass="delete_pane_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+               <TableView layoutX="14.0" layoutY="106.0" prefHeight="200.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
-               <TextField layoutX="14.0" layoutY="330.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="373.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="416.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="459.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="502.0" prefHeight="33.0" prefWidth="191.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="546.0" prefHeight="33.0" prefWidth="191.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="536.0" layoutY="333.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="536.0" layoutY="376.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="536.0" layoutY="419.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="744.0" layoutY="333.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="376.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="419.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="462.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="505.0" prefHeight="33.0" prefWidth="191.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="549.0" prefHeight="33.0" prefWidth="191.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="219.0" layoutY="330.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="219.0" layoutY="373.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="219.0" layoutY="416.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="330.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="373.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="416.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="459.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="502.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="14.0" layoutY="546.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="536.0" layoutY="333.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+               <TextField layoutX="536.0" layoutY="376.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+               <TextField layoutX="536.0" layoutY="419.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+               <TextField layoutX="744.0" layoutY="333.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="744.0" layoutY="376.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="744.0" layoutY="419.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="744.0" layoutY="462.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="744.0" layoutY="505.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="744.0" layoutY="549.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField layoutX="219.0" layoutY="330.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="219.0" layoutY="373.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="219.0" layoutY="416.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
                <Button layoutX="310.0" layoutY="483.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="329.0" styleClass="delete_pane_delete_button" stylesheets="@Proffectional_Look.css" text="Delete" />
                <Button layoutX="310.0" layoutY="543.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="329.0" styleClass="delete_pane_clear_button" stylesheets="@Proffectional_Look.css" text="Clear" />
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="view_product" layoutX="250.0" layoutY="58.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="view_product" layoutX="250.0" layoutY="58.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="100.0" prefHeight="467.0" prefWidth="922.0" styleClass="update_pane_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="32.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.00000000000006">
+               <TableView layoutX="14.0" layoutY="100.0" prefHeight="467.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="32.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.00000000000006">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
-               <TextField layoutX="95.0" layoutY="38.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="update_pane_textfields" stylesheets="@Proffectional_Look.css" />
+               <TextField layoutX="95.0" layoutY="38.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="addsearch" stylesheets="@Proffectional_Look.css" />
                <FontAwesomeIcon glyphName="SEARCH" layoutX="102.0" layoutY="69.0" size="1.5em" />
-               <DatePicker layoutX="365.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" styleClass="update_pane_textfields" />
+               <DatePicker layoutX="365.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" styleClass="add_textfield" />
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="history_pane" layoutX="250.0" layoutY="70.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="history_pane" layoutX="250.0" layoutY="70.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="385.0" styleClass="update_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="385.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="20.0" text="History" textFill="#162c79">
                         <font>
@@ -250,9 +252,9 @@
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="day_pane" layoutX="250.0" layoutY="91.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="day_pane" layoutX="250.0" layoutY="91.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="184.0" prefHeight="383.0" prefWidth="922.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+               <TableView layoutX="14.0" layoutY="184.0" prefHeight="383.0" prefWidth="922.0" styleClass="history_table" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
@@ -261,9 +263,9 @@
                <TextField layoutX="336.0" layoutY="86.0" prefHeight="51.0" prefWidth="233.0" promptText="Search" styleClass="update_pane_textfields" />
                <FontAwesomeIcon glyphName="SEARCH" layoutX="342.0" layoutY="118.0" size="1.5em" />
                <DatePicker layoutX="582.0" layoutY="87.0" styleClass="update_pane_textfields" />
-               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="161.0" prefWidth="311.0" styleClass="update_pane">
+               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="161.0" prefWidth="311.0" styleClass="history_pane">
                   <children>
-                     <Label layoutX="22.0" layoutY="24.0" text="Day History" textFill="#1c456e">
+                     <Label layoutX="22.0" layoutY="24.0" text="Day History" textFill="#274d77">
                         <font>
                            <Font size="30.0" />
                         </font>
@@ -272,15 +274,15 @@
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="week_pane" layoutX="250.0" layoutY="77.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="week_pane" layoutX="250.0" layoutY="77.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="187.0" prefHeight="390.0" prefWidth="922.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="186.66666666666663">
+               <TableView layoutX="14.0" layoutY="187.0" prefHeight="390.0" prefWidth="922.0" styleClass="history_table" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="186.66666666666663">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="329.0" styleClass="update_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="329.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="Week History">
                         <font>
@@ -294,16 +296,16 @@
                <FontAwesomeIcon glyphName="SEARCH" layoutX="394.0" layoutY="135.0" size="1.5em" />
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="monthly_pane" layoutX="250.0" layoutY="78.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="monthly_pane" layoutX="250.0" layoutY="78.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="184.0" prefHeight="390.0" prefWidth="916.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+               <TableView layoutX="14.0" layoutY="184.0" prefHeight="390.0" prefWidth="916.0" styleClass="history_table" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
                <TextField layoutX="392.0" layoutY="119.0" prefHeight="49.0" prefWidth="239.0" promptText="Search" styleClass="update_pane_textfields" />
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="320.0" styleClass="update_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="320.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="21.0" text="Monthly History" textFill="#192e74">
                         <font>

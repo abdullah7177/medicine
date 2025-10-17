@@ -1,26 +1,21 @@
-
 package medicine;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
-import javafx.animation.FadeTransition;
-import javafx.animation.Interpolator;
-import javafx.animation.ParallelTransition;
-import javafx.animation.TranslateTransition;
+import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Billing_PointController implements Initializable {
@@ -32,13 +27,7 @@ public class Billing_PointController implements Initializable {
     @FXML
     private Button close_Btn;
     @FXML
-    private Button Add_Btn;
-    @FXML
     private AnchorPane Dashboard;
-    @FXML
-    private Button Delete_Btn;
-    @FXML
-    private Button Update_Btn;
     @FXML
     private TreeView<String> Tree_View;
     @FXML
@@ -59,35 +48,25 @@ public class Billing_PointController implements Initializable {
     private AnchorPane view_product;
     @FXML
     private AnchorPane history_pane;
-    private AnchorPane day_history;
+
     @FXML
     private AnchorPane day_pane;
     @FXML
     private AnchorPane week_pane;
     @FXML
     private AnchorPane monthly_pane;
+    @FXML
+    private Label dashboardClock;
 
- 
     @FXML
     public void close() {
         System.exit(0);
     }
 
-    // ===============================
-    // INITIALIZATION
-    // ===============================
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Full screen
-        Platform.runLater(() -> {
-            Stage stage = (Stage) Billing_StackPane.getScene().getWindow();
-            if (stage != null) {
-                stage.setFullScreen(true);
-            }
-        });
-
         sidebar.setTranslateX(0);
-
+startClock();
         // TreeView setup
         TreeItem<String> rootItem = new TreeItem<>("Root");
         rootItem.setExpanded(true);
@@ -100,24 +79,18 @@ public class Billing_PointController implements Initializable {
         TreeItem<String> deleteProduct = new TreeItem<>("Delete Product");
         TreeItem<String> viewProduct = new TreeItem<>("View Product");
 
-        //HISTORY Treeview
-         TreeItem<String> HistorytMain = new TreeItem<>("View History");
-       
-         TreeItem<String> dayhistory = new TreeItem<>("Day History");
-         TreeItem<String> weekhistory = new TreeItem<>("Week History");
-         TreeItem<String> monthlyhistory = new TreeItem<>("Monthly History");
-        
-         //Add Product
-        addProductMain.getChildren().addAll(addProduct, updateProduct, deleteProduct, viewProduct);
-        rootItem.getChildren().addAll(dashboard, addProductMain,HistorytMain);
+        TreeItem<String> HistorytMain = new TreeItem<>("View History");
+        TreeItem<String> dayhistory = new TreeItem<>("Day History");
+        TreeItem<String> weekhistory = new TreeItem<>("Week History");
+        TreeItem<String> monthlyhistory = new TreeItem<>("Monthly History");
 
-        //View History
-        HistorytMain.getChildren().addAll(dayhistory,weekhistory,monthlyhistory);
-        
+        addProductMain.getChildren().addAll(addProduct, updateProduct, deleteProduct, viewProduct);
+        rootItem.getChildren().addAll(dashboard, addProductMain, HistorytMain);
+        HistorytMain.getChildren().addAll(dayhistory, weekhistory, monthlyhistory);
+
         Tree_View.setRoot(rootItem);
         Tree_View.setShowRoot(false);
 
-        // Initial pane visibility
         Tree_Dash.setVisible(true);
         add_panes.setVisible(false);
         add_pane.setVisible(false);
@@ -128,9 +101,7 @@ public class Billing_PointController implements Initializable {
         day_pane.setVisible(false);
         week_pane.setVisible(false);
         monthly_pane.setVisible(false);
-        
-        
-        // Tree selection listener
+
         Tree_View.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null) {
                 String selected = newValue.getValue();
@@ -155,95 +126,83 @@ public class Billing_PointController implements Initializable {
                     showPane(week_pane);
                 } else if (selected.equals("Monthly History")) {
                     showPane(monthly_pane);
-                }  
-                
+                }
             }
         });
     }
 
-    // ===============================
-    // SHOW SELECTED PANE WITH ANIMATION
-    // ===============================
-  private void showPane(AnchorPane targetPane) {
-    // Hide all panes first
-    Tree_Dash.setVisible(false);
-    add_panes.setVisible(false);
-    add_pane.setVisible(false);
-    update_pane.setVisible(false);
-    delete_pane.setVisible(false);
-    view_product.setVisible(false);
-    history_pane.setVisible(false);
-    day_pane.setVisible(false);
-    week_pane.setVisible(false);
-    monthly_pane.setVisible(false);
-    // Show the selected pane
-    targetPane.setVisible(true);
+    private void showPane(AnchorPane targetPane) {
+        Tree_Dash.setVisible(false);
+        add_panes.setVisible(false);
+        add_pane.setVisible(false);
+        update_pane.setVisible(false);
+        delete_pane.setVisible(false);
+        view_product.setVisible(false);
+        history_pane.setVisible(false);
+        day_pane.setVisible(false);
+        week_pane.setVisible(false);
+        monthly_pane.setVisible(false);
 
-    
+        targetPane.setVisible(true);
+    }
+
+    // ===============================
+    // SUPER SMOOTH SIDEBAR TOGGLE (iPhone style)
+    // ===============================
+@FXML
+private void toggleSidebar() {
+    double durationMillis = 200; // slightly smoother
+    Duration duration = Duration.millis(durationMillis);
+
+    boolean sidebarOpen = sidebar.getTranslateX() == 0;
+    double moveX = sidebarOpen ? -sidebar.getWidth() + 50 : 0;
+
+    // Use our new smooth function for all
+    TranslateTransition sidebarSlide = createSmoothSlide(sidebar, moveX, duration);
+    TranslateTransition dashSlide = createSmoothSlide(Tree_Dash, moveX, duration);
+    TranslateTransition addPanesSlide = createSmoothSlide(add_panes, moveX, duration);
+    TranslateTransition addPaneSlide = createSmoothSlide(add_pane, moveX, duration);
+    TranslateTransition updatePaneSlide = createSmoothSlide(update_pane, moveX, duration);
+    TranslateTransition deletePaneSlide = createSmoothSlide(delete_pane, moveX, duration);
+    TranslateTransition viewPaneSlide = createSmoothSlide(view_product, moveX, duration);
+    TranslateTransition historyPaneSlide = createSmoothSlide(history_pane, moveX, duration);
+    TranslateTransition dayPaneSlide = createSmoothSlide(day_pane, moveX, duration);
+    TranslateTransition weekPaneSlide = createSmoothSlide(week_pane, moveX, duration);
+    TranslateTransition monthPaneSlide = createSmoothSlide(monthly_pane, moveX, duration);
+
+    // Play all animations together
+    sidebarSlide.play();
+    dashSlide.play();
+    addPanesSlide.play();
+    addPaneSlide.play();
+    updatePaneSlide.play();
+    deletePaneSlide.play();
+    viewPaneSlide.play();
+    historyPaneSlide.play();
+    dayPaneSlide.play();
+    weekPaneSlide.play();
+    monthPaneSlide.play();
+}
+
+    // Helper method — creates smooth animation
+// Smooth slide animation for any Node (AnchorPane, VBox, etc.)
+private TranslateTransition createSmoothSlide(javafx.scene.Node node, double toX, Duration duration) {
+    TranslateTransition slide = new TranslateTransition(duration, node);
+    slide.setToX(toX);
+    slide.setInterpolator(Interpolator.EASE_BOTH);
+    return slide;
 }
 
 
+private void startClock() {
+    Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+        LocalTime time = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+        dashboardClock.setText(time.format(formatter));
+    }));
+    clock.setCycleCount(Animation.INDEFINITE);
+    clock.play();
+}
 
 
-    // ===============================
-    // SIDEBAR TOGGLE — moves all visible panes with it
-    // ===============================
-    @FXML
-    private void toggleSidebar() {
-        TranslateTransition sidebarSlide = new TranslateTransition(Duration.millis(200), sidebar);
-
-        // Apply same movement to all panes
-        TranslateTransition dashSlide = new TranslateTransition(Duration.millis(200), Tree_Dash);
-        TranslateTransition addPanesSlide = new TranslateTransition(Duration.millis(200), add_panes);
-        TranslateTransition addPaneSlide = new TranslateTransition(Duration.millis(200), add_pane);
-        TranslateTransition updatePaneSlide = new TranslateTransition(Duration.millis(200), update_pane);
-        TranslateTransition deletePaneSlide = new TranslateTransition(Duration.millis(200), delete_pane);
-        TranslateTransition viewPaneSlide = new TranslateTransition(Duration.millis(200), view_product);
-        TranslateTransition historyPaneSlide = new TranslateTransition(Duration.millis(200), history_pane);
-        TranslateTransition dayPaneSlide = new TranslateTransition(Duration.millis(200), day_pane);
-        TranslateTransition weekPaneSlide = new TranslateTransition(Duration.millis(200), week_pane);
-        TranslateTransition monthPaneSlide = new TranslateTransition(Duration.millis(200), monthly_pane);
-        
-        boolean sidebarOpen = sidebar.getTranslateX() == 0;
-        double moveX = sidebarOpen ? -sidebar.getWidth() + 50 : 0;
-
-        sidebarSlide.setToX(moveX);
-        dashSlide.setToX(moveX);
-        addPanesSlide.setToX(moveX);
-        addPaneSlide.setToX(moveX);
-        updatePaneSlide.setToX(moveX);
-        deletePaneSlide.setToX(moveX);
-        viewPaneSlide.setToX(moveX);
-        historyPaneSlide.setToX(moveX);
-        dayPaneSlide.setToX(moveX);
-        weekPaneSlide.setToX(moveX);
-        monthPaneSlide.setToX(moveX);
-                
-                
-        sidebarSlide.setInterpolator(Interpolator.EASE_BOTH);
-        dashSlide.setInterpolator(Interpolator.EASE_BOTH);
-        addPanesSlide.setInterpolator(Interpolator.EASE_BOTH);
-        addPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        updatePaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        deletePaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        viewPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        historyPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        dayPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        weekPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        monthPaneSlide.setInterpolator(Interpolator.EASE_BOTH);
-        
-
-        sidebarSlide.play();
-        dashSlide.play();
-        addPanesSlide.play();
-        addPaneSlide.play();
-        updatePaneSlide.play();
-        deletePaneSlide.play();
-        viewPaneSlide.play();
-        historyPaneSlide.play();
-        dayPaneSlide.play();
-        weekPaneSlide.play();
-        monthPaneSlide.play();
-        
-    }
 }
