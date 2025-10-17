@@ -6,13 +6,13 @@
 /* === Sidebar Background === */
 .sidebar {
     -fx-background-color: #2B3E4D;
-    -fx-padding: 10;
+    -fx-padding: 5;
 }
 
 /* === Profile Section === */
 .profile-section {
     -fx-alignment: center;
-    -fx-padding: 30 0 10 0;
+    /*-fx-padding: 30 0 10 0;*/
 }
 
 .profile-name {
@@ -503,4 +503,25 @@
 .tree-cell:selected {
     -fx-background-color: #4C6A82;
     -fx-text-fill: white;
+}
+
+/*.menu-button{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-radius: 10px;
+}
+
+.menu-button:hover{
+    
+    -fx-background-color: #fff;
+    
+}*/
+
+.menu_button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.menu_button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
 }
