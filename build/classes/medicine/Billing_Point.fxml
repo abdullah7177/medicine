@@ -4,6 +4,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
@@ -21,7 +22,7 @@
 <StackPane fx:id="Billing_StackPane" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medicine.Billing_PointController">
     
     <children>
-        <AnchorPane fx:id="Dashboard" prefHeight="600.0" prefWidth="1200.0" stylesheets="@Proffectional_Look.css">
+        <AnchorPane fx:id="Dashboard" prefHeight="600.0" prefWidth="1200.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css">
             <!-- Sidebar -->
             <VBox fx:id="sidebar" prefWidth="250.0" spacing="20" styleClass="sidebar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                 
@@ -114,8 +115,8 @@
                </AnchorPane>
                <AnchorPane layoutX="23.0" layoutY="198.0" prefHeight="391.0" prefWidth="914.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="190.0">
                   <children>
-                     <TextField layoutX="14.0" layoutY="14.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="61.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+                     <TextField layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Item Code" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+                     <TextField layoutX="14.0" layoutY="61.0" prefWidth="200.0" promptText="Product name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
                      <TextField layoutX="14.0" layoutY="107.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
                      <TextField layoutX="14.0" layoutY="154.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
                      <TextField layoutX="14.0" layoutY="202.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
@@ -215,6 +216,104 @@
                <TextField layoutX="219.0" layoutY="416.0" styleClass="delete_pane_textfield" stylesheets="@Proffectional_Look.css" />
                <Button layoutX="310.0" layoutY="483.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="329.0" styleClass="delete_pane_delete_button" stylesheets="@Proffectional_Look.css" text="Delete" />
                <Button layoutX="310.0" layoutY="543.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="329.0" styleClass="delete_pane_clear_button" stylesheets="@Proffectional_Look.css" text="Clear" />
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="view_product" layoutX="250.0" layoutY="58.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <TableView layoutX="14.0" layoutY="100.0" prefHeight="467.0" prefWidth="922.0" styleClass="update_pane_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="32.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.00000000000006">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <TextField layoutX="95.0" layoutY="38.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="update_pane_textfields" stylesheets="@Proffectional_Look.css" />
+               <FontAwesomeIcon glyphName="SEARCH" layoutX="102.0" layoutY="69.0" size="1.5em" />
+               <DatePicker layoutX="365.0" layoutY="37.0" prefHeight="30.0" prefWidth="250.0" styleClass="update_pane_textfields" />
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="history_pane" layoutX="250.0" layoutY="70.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="385.0" styleClass="update_pane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="20.0" text="History" textFill="#162c79">
+                        <font>
+                           <Font name="Tahoma" size="62.0" />
+                        </font>
+                     </Label>
+                     <ImageView fitHeight="107.0" fitWidth="113.0" layoutX="233.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/money-back-guarantee.png" />
+                        </image>
+                     </ImageView>
+                     <Separator layoutX="12.0" layoutY="98.0" prefHeight="3.0" prefWidth="200.0" />
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="day_pane" layoutX="250.0" layoutY="91.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <TableView layoutX="14.0" layoutY="184.0" prefHeight="383.0" prefWidth="922.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <TextField layoutX="336.0" layoutY="86.0" prefHeight="51.0" prefWidth="233.0" promptText="Search" styleClass="update_pane_textfields" />
+               <FontAwesomeIcon glyphName="SEARCH" layoutX="342.0" layoutY="118.0" size="1.5em" />
+               <DatePicker layoutX="582.0" layoutY="87.0" styleClass="update_pane_textfields" />
+               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="161.0" prefWidth="311.0" styleClass="update_pane">
+                  <children>
+                     <Label layoutX="22.0" layoutY="24.0" text="Day History" textFill="#1c456e">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="week_pane" layoutX="250.0" layoutY="77.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <TableView layoutX="14.0" layoutY="187.0" prefHeight="390.0" prefWidth="922.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="186.66666666666663">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="329.0" styleClass="update_pane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="14.0" text="Week History">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <TextField layoutX="388.0" layoutY="108.0" prefHeight="48.0" prefWidth="239.0" promptText="Search" styleClass="update_pane_textfields" />
+               <DatePicker layoutX="639.0" layoutY="106.0" styleClass="update_pane_textfields" />
+               <FontAwesomeIcon glyphName="SEARCH" layoutX="394.0" layoutY="135.0" size="1.5em" />
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="monthly_pane" layoutX="250.0" layoutY="78.0" prefHeight="600.0" prefWidth="950.0" styleClass="update_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <TableView layoutX="14.0" layoutY="184.0" prefHeight="390.0" prefWidth="916.0" styleClass="update_pane_table" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <TextField layoutX="392.0" layoutY="119.0" prefHeight="49.0" prefWidth="239.0" promptText="Search" styleClass="update_pane_textfields" />
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="320.0" styleClass="update_pane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="21.0" text="Monthly History" textFill="#192e74">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <DatePicker layoutX="647.0" layoutY="119.0" styleClass="update_pane_textfields" />
+               <FontAwesomeIcon glyphName="SEARCH" layoutX="398.0" layoutY="150.0" size="1.5em" />
             </children>
          </AnchorPane>
 

@@ -505,17 +505,6 @@
     -fx-text-fill: white;
 }
 
-/*.menu-button{
-    -fx-background-color: transparent;
-    -fx-border-color: #fff;
-    -fx-border-radius: 10px;
-}
-
-.menu-button:hover{
-    
-    -fx-background-color: #fff;
-    
-}*/
 
 .menu_button {
     -fx-background-color: transparent;
@@ -524,4 +513,22 @@
 
 .menu_button:hover {
     -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.update_pane_textfields {
+    -fx-background-color: #D6E1FF;      /* slightly darker than pane */
+    -fx-text-fill: #1F2D4D;              /* dark text */
+    -fx-font-size: 15px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #4A90E2;           /* subtle border */
+    -fx-border-radius: 10px;
+    -fx-padding: 6px 10px 10px 25px;                
+    -fx-effect: dropshadow(gaussian, rgba(74,144,226,0.2), 4, 0.4, 0, 2); /* subtle shadow */
+}
+
+.update_pane_textfields:focused {
+    -fx-border-color: #5AA5F2;           /* lighter blue on focus */
+    -fx-effect: dropshadow(gaussian, rgba(90,165,242,0.3), 6, 0.5, 0, 3); /* slightly stronger shadow on focus */
 }
