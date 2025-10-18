@@ -9,10 +9,12 @@ import javafx.animation.*;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -55,8 +57,31 @@ public class Billing_PointController implements Initializable {
     private AnchorPane week_pane;
     @FXML
     private AnchorPane monthly_pane;
-    @FXML
     private Label dashboardClock;
+    @FXML
+    private Label Clock;
+    @FXML
+    private Label clock1;
+    @FXML
+    private Label clock2;
+    @FXML
+    private ImageView View_expenses_image;
+    @FXML
+    private ImageView daily_image;
+    @FXML
+    private ImageView add_image;
+    @FXML
+    private ImageView update_image;
+    @FXML
+    private ImageView delete_image;
+    @FXML
+    private Label clock3;
+    @FXML
+    private ImageView view_products_image;
+    @FXML
+    private ImageView dashboard_image;
+    @FXML
+    private Label dashboard_label;
 
     @FXML
     public void close() {
@@ -66,7 +91,23 @@ public class Billing_PointController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         sidebar.setTranslateX(0);
-startClock();
+        
+        
+        startClock(clock1);
+        startClock(clock2);
+        startClock(Clock);
+        startClock(clock3);
+        
+        imageAnimation(View_expenses_image);
+        imageAnimation(daily_image);
+        imageAnimation(add_image);
+        imageAnimation(update_image);
+        imageAnimation(delete_image);
+        imageAnimation(view_products_image);
+        imageAnimation(daily_image);
+        imageAnimation(dashboard_image);
+        
+        
         // TreeView setup
         TreeItem<String> rootItem = new TreeItem<>("Root");
         rootItem.setExpanded(true);
@@ -131,6 +172,39 @@ startClock();
         });
     }
 
+
+    
+    
+    
+    //image
+    
+    public static void imageAnimation(ImageView imageView) {
+        if (imageView == null) return;
+
+        ScaleTransition scale = new ScaleTransition(Duration.seconds(1), imageView);
+        scale.setFromX(1.2);
+        scale.setFromY(1.2);
+        scale.setToX(1.1);
+        scale.setToY(1.1);
+        scale.setAutoReverse(true);
+        scale.setCycleCount(ScaleTransition.INDEFINITE);
+        scale.play();
+    }
+    
+    public static void startClock(Label... labels) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+
+        Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+            String timeNow = LocalTime.now().format(formatter);
+            for (Label label : labels) {
+                label.setText(timeNow);
+            }
+        }));
+
+        clock.setCycleCount(Animation.INDEFINITE);
+        clock.play();
+    }
+    
     private void showPane(AnchorPane targetPane) {
         Tree_Dash.setVisible(false);
         add_panes.setVisible(false);
@@ -194,15 +268,7 @@ private TranslateTransition createSmoothSlide(javafx.scene.Node node, double toX
 }
 
 
-private void startClock() {
-    Timeline clock = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
-        LocalTime time = LocalTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
-        dashboardClock.setText(time.format(formatter));
-    }));
-    clock.setCycleCount(Animation.INDEFINITE);
-    clock.play();
-}
+
 
 
 }
