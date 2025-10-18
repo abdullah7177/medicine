@@ -82,6 +82,26 @@ public class Billing_PointController implements Initializable {
     private ImageView dashboard_image;
     @FXML
     private Label dashboard_label;
+ 
+    @FXML
+    private ImageView customer_image;
+    @FXML
+    private ImageView sale_image;
+    @FXML
+    private ImageView total_images;
+    @FXML
+    private ImageView addProducts_image;
+    @FXML
+    private AnchorPane total_image;
+    @FXML
+    private ImageView prooducts_image;
+    @FXML
+    private ImageView Dele_products_image;
+    @FXML
+    private ImageView monthly_image;
+    @FXML
+    private ImageView monthly_ex;
+   
 
     @FXML
     public void close() {
@@ -106,8 +126,15 @@ public class Billing_PointController implements Initializable {
         imageAnimation(view_products_image);
         imageAnimation(daily_image);
         imageAnimation(dashboard_image);
-        
-        
+        imageAnimation(total_images);
+        imageAnimation(sale_image);
+        imageAnimation(customer_image);
+        imageAnimation(addProducts_image);
+        imageAnimation(prooducts_image);
+        imageAnimation(Dele_products_image);
+        imageAnimation(monthly_image);
+        imageAnimation(monthly_ex);
+         
         // TreeView setup
         TreeItem<String> rootItem = new TreeItem<>("Root");
         rootItem.setExpanded(true);
@@ -120,10 +147,10 @@ public class Billing_PointController implements Initializable {
         TreeItem<String> deleteProduct = new TreeItem<>("Delete Product");
         TreeItem<String> viewProduct = new TreeItem<>("View Product");
 
-        TreeItem<String> HistorytMain = new TreeItem<>("View History");
-        TreeItem<String> dayhistory = new TreeItem<>("Day History");
-        TreeItem<String> weekhistory = new TreeItem<>("Week History");
-        TreeItem<String> monthlyhistory = new TreeItem<>("Monthly History");
+        TreeItem<String> HistorytMain = new TreeItem<>("Expenses");
+        TreeItem<String> dayhistory = new TreeItem<>("Daily Expenses");
+        TreeItem<String> weekhistory = new TreeItem<>("View Expenses");
+        TreeItem<String> monthlyhistory = new TreeItem<>("Monthly Expenses");
 
         addProductMain.getChildren().addAll(addProduct, updateProduct, deleteProduct, viewProduct);
         rootItem.getChildren().addAll(dashboard, addProductMain, HistorytMain);
@@ -159,13 +186,13 @@ public class Billing_PointController implements Initializable {
                     showPane(delete_pane);
                 } else if (selected.equals("View Product")) {
                     showPane(view_product);
-                } else if (selected.equals("View History")) {
+                } else if (selected.equals("Expenses")) {
                     showPane(history_pane);
-                } else if (selected.equals("Day History")) {
+                } else if (selected.equals("Daily Expenses")) {
                     showPane(day_pane);
-                } else if (selected.equals("Week History")) {
+                } else if (selected.equals("View Expenses")) {
                     showPane(week_pane);
-                } else if (selected.equals("Monthly History")) {
+                } else if (selected.equals("Monthly Expenses")) {
                     showPane(monthly_pane);
                 }
             }
