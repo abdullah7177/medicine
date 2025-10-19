@@ -158,9 +158,7 @@ private TableColumn<Product, String> colCompanyNameD;
                     .append("tradePrice", txtTradePrice.getText())
                     .append("discount", txtDiscount.getText())
                     .append("bonusPrice", txtBonusPrice.getText());
-
             collection.insertOne(doc);
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setHeaderText("Data Inserted");

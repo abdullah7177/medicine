@@ -804,3 +804,436 @@
     -fx-font-family: "Segoe UI", "Poppins", sans-serif;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.3, 1, 1);
 }
+
+
+/* Total Products Card Style */
+.totalproducts-card {
+    -fx-background-color: linear-gradient(to right, #FFB347, #FFCC33);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(255, 152, 0, 0.4), 10, 0.5, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.totalproducts-card:hover {
+    -fx-background-color: linear-gradient(to right, #FFC300, #FF9800);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Label inside the card */
+.totalproducts-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Value or number text */
+.totalproducts-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Customers Card */
+.customers-card {
+    -fx-background-color: linear-gradient(to right, #56CCF2, #2F80ED);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(47, 128, 237, 0.4), 10, 0.5, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.customers-card:hover {
+    -fx-background-color: linear-gradient(to right, #2F80ED, #1E3C72);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Label inside the card */
+.customers-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EAF2FD;
+}
+
+/* Value or number text */
+.customers-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Total Sales Card */
+.total-sales-card {
+    -fx-background-color: linear-gradient(to right, #11998e, #38ef7d);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(56, 239, 125, 0.4), 10, 0.5, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.total-sales-card:hover {
+    -fx-background-color: linear-gradient(to right, #38ef7d, #11998e);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Label for title */
+.total-sales-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #E8FDF2;
+}
+
+/* Value or number text */
+.total-sales-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+}
+
+
+/* Add Products Card */
+.adds-products-card {
+    -fx-background-color: linear-gradient(to right, #f7971e, #ffd200);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(255, 210, 0, 0.4), 10, 0.5, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.adds-products-card:hover {
+    -fx-background-color: linear-gradient(to right, #ffd200, #f7971e);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Label (Title) */
+.adds-products-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff5e1;
+}
+
+/* Value / Number */
+.adds-products-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+/* Delete Card */
+.deletecard {
+    -fx-background-color: linear-gradient(to right, #ff416c, #ff4b2b);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(255, 75, 43, 0.5), 12, 0.6, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.deletecard:hover {
+    -fx-background-color: linear-gradient(to right, #ff4b2b, #ff416c);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Title Label */
+.deletelabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff0f0;
+}
+
+/* Value / Text */
+.deletevalue {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+
+
+/* Daily Card */
+.daily-card {
+    -fx-background-color: linear-gradient(to right, #6dd5fa, #2980b9);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(41, 128, 185, 0.4), 12, 0.6, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.daily-card:hover {
+    -fx-background-color: linear-gradient(to right, #2980b9, #6dd5fa);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+/* Title Label */
+.daily-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f2f9ff;
+}
+
+/* Value / Text */
+.daily-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+
+/* 💜 Costoms Card (Modern Pastel Style) */
+.costoms-card {
+    -fx-background-color: linear-gradient(to bottom right, #f8efff, #fef9ff); /* soft lavender + cream */
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #e5d7ff;
+    -fx-border-width: 1.2;
+    -fx-effect: dropshadow(gaussian, rgba(150, 120, 200, 0.25), 15, 0.4, 0, 4);
+    /*-fx-padding: 20;*/
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+/* Hover — gentle glow */
+.costoms-card:hover {
+    -fx-background-color: linear-gradient(to bottom right, #ede0ff, #faf3ff);
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(140, 100, 200, 0.4), 18, 0.45, 0, 5);
+}
+
+/* Title */
+.costoms-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4b3d66;
+}
+
+/* Value */
+.costoms-value {
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #7a56ff;
+}
+
+
+
+.attended-pane {
+    -fx-background-color: linear-gradient(to bottom right, #fff9ff, #f8f4ff);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #e0d4ff;
+    -fx-border-width: 1.3;
+    /*-fx-padding: 15;*/
+    -fx-effect: dropshadow(gaussian, rgba(150, 130, 255, 0.25), 10, 0.4, 0, 3);
+}
+
+/* Header */
+.attended-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #6c4eff;
+}
+
+/* Table background (optional) */
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-column-header {
+    -fx-background-color: #f2eaff;
+    -fx-text-fill: #4a3cbf;
+    -fx-font-weight: bold;
+}
+
+
+.remaining-pane {
+    -fx-background-color: linear-gradient(to bottom right, #fff5f5, #ffeaea);
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #ffb3b3;
+    -fx-border-width: 1.5;
+    /*-fx-padding: 15;*/
+    -fx-effect: dropshadow(gaussian, rgba(255, 100, 100, 0.25), 10, 0.4, 0, 3);
+}
+
+/* Header label (like “Remaining Customers”) */
+.remaining-header {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #cc0000;
+}
+
+/* Table styling */
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-column-header {
+    -fx-background-color: #ffe5e5;
+    -fx-font-weight: bold;
+    -fx-text-fill: #a80000;
+}
+
+
+/*CustomersSection*/ 
+/* ==============================
+   CUSTOMERS ADDING PANE STYLE
+   ============================== */
+
+/* Main Pane — Soft Gradient Look */
+.customersAddPane {
+    -fx-background-color: linear-gradient(to bottom right, #E4FFF8, #D2F0FF);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #B0E5F5;
+    -fx-border-width: 2;
+    /*-fx-padding: 15;*/
+}
+
+/* Label Styling */
+.CustomersSectionlabel {
+    -fx-text-fill: #004E64;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* TextField Styling */
+.CustomersSectiontext-field {
+    -fx-background-color: white;
+    -fx-border-color: #A0D8E6;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 6 10 6 10;
+    -fx-font-size: 13px;
+}
+
+/* Button Styling */
+.CustomersSectionbutton {
+    -fx-background-color: #5AC8FA;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+.CustomersSectionbutton:hover {
+    -fx-background-color: #48B2E0;
+}
+
+/* ==============================
+   TABLEVIEW STYLING
+   ============================== */
+
+.CustomersSectiontable-view {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 15;
+    -fx-border-color: #CDEFFF;
+    -fx-border-radius: 15;
+    -fx-border-width: 1.5;
+    -fx-padding: 5;
+    -fx-table-cell-border-color: transparent;
+}
+
+.CustomersSectiontable-view .column-header-background {
+    -fx-background-color: linear-gradient(to right, #A9E5FF, #D4F9FF);
+    -fx-background-radius: 15 15 0 0;
+}
+
+.CustomersSectiontable-view .column-header, .table-view .filler {
+    -fx-size: 30px;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: transparent transparent #BDE8F9 transparent;
+}
+
+.CustomersSectiontable-view .column-header .label {
+    -fx-text-fill: #004E64;
+    -fx-font-weight: bold;
+}
+
+.CustomersSectiontable-row-cell:filled:selected {
+    -fx-background-color: #B8F2FF;
+    -fx-text-fill: black;
+}
+
+.CustomersSectiontable-row-cell:filled:hover {
+    -fx-background-color: #E2FAFF;
+}
+
+/* Smooth corners for Table Rows */
+.CustomersSectiontable-row-cell {
+    -fx-background-radius: 10;
+}
+
+
+/* View Customers Pane Background */
+.viewCustomersPane {
+    -fx-background-color: linear-gradient(to bottom right, #f8fbff, #b4cfed);
+    -fx-background-radius: 15;
+    /*-fx-padding: 15;*/
+}
+
+/* TableView Style */
+/* ====== TableView Style ====== */
+.view_table_Views {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cfd8dc;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+/* ====== Header ====== */
+.view_table_Views .column-header-background {
+    -fx-background-color: linear-gradient(to right, #21557d, #b4cfed);
+    -fx-background-radius: 10 10 0 0;
+}
+
+
+.view_table_Views .column-header,.view_table_Views .label {
+    -fx-text-fill: #21557d;
+    -fx-font-weight: bold;
+}
+
+/* ====== Rows ====== */
+.view_table_Views .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #21557d transparent;
+}
+
+.view_table_Views .table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+.Sign_out{
+    
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-radius: 5px;
+    
+}
+.Sign_out:hover{
+    
+    -fx-background-color: linear-gradient(to right, #21557d, #b4cfed);
+    
+}

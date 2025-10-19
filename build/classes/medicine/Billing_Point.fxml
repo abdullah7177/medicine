@@ -51,7 +51,7 @@
                 <Separator />
             <TreeView fx:id="Tree_View" prefHeight="368.0" prefWidth="239.0" stylesheets="@Proffectional_Look.css" />
             </VBox>
-         <AnchorPane fx:id="add_panes" layoutX="250.0" layoutY="31.333333333333332" prefHeight="600.0" prefWidth="950.0" styleClass="orange" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="add_panes" layoutX="250.0" layoutY="31.333333333333332" prefHeight="600.0" prefWidth="950.0" styleClass="orange" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
       
                   <!-- Top Right Close Button -->
@@ -87,14 +87,14 @@
                      <Separator layoutX="5.0" layoutY="66.0" prefHeight="3.0" prefWidth="357.0" />
                   </children>
                </AnchorPane>
-               <AnchorPane layoutX="782.0" layoutY="69.0" prefHeight="310.0" prefWidth="153.0" visible="false">
+               <AnchorPane layoutX="782.0" layoutY="69.0" prefHeight="310.0" prefWidth="153.0">
                   <children>
                      <Label fx:id="dashboardClock" layoutX="57.0" layoutY="61.0" styleClass="dashboard_clock" text="Label" />
                   </children>
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="add_pane" layoutX="250.0" layoutY="127.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="add_pane" layoutX="250.0" layoutY="127.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="163.0" prefWidth="320.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                   <children>
