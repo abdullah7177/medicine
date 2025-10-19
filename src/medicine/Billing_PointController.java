@@ -101,6 +101,14 @@ public class Billing_PointController implements Initializable {
     private ImageView monthly_image;
     @FXML
     private ImageView monthly_ex;
+    @FXML
+    private AnchorPane customers_pane;
+    @FXML
+    private ImageView costomers_images;
+    @FXML
+    private AnchorPane customers_add_pane;
+    @FXML
+    private AnchorPane viewCustomersPane;
    
 
     @FXML
@@ -134,6 +142,7 @@ public class Billing_PointController implements Initializable {
         imageAnimation(Dele_products_image);
         imageAnimation(monthly_image);
         imageAnimation(monthly_ex);
+        imageAnimation(customer_image);
          
         // TreeView setup
         TreeItem<String> rootItem = new TreeItem<>("Root");
@@ -141,20 +150,33 @@ public class Billing_PointController implements Initializable {
 
         TreeItem<String> dashboard = new TreeItem<>("Dashboard");
         TreeItem<String> addProductMain = new TreeItem<>("Add Products");
-
+       
+        
+        //Add
+        
         TreeItem<String> addProduct = new TreeItem<>("Add Product");
         TreeItem<String> updateProduct = new TreeItem<>("Update Product");
         TreeItem<String> deleteProduct = new TreeItem<>("Delete Product");
         TreeItem<String> viewProduct = new TreeItem<>("View Product");
 
+        //Expenses
         TreeItem<String> HistorytMain = new TreeItem<>("Expenses");
         TreeItem<String> dayhistory = new TreeItem<>("Daily Expenses");
         TreeItem<String> weekhistory = new TreeItem<>("View Expenses");
         TreeItem<String> monthlyhistory = new TreeItem<>("Monthly Expenses");
+        
+        //Customers
+         TreeItem<String> customersMain = new TreeItem<>("Customers");
+         TreeItem<String> addcustomer = new TreeItem<>("Add Customer");
+         TreeItem<String> Viewcustomer = new TreeItem<>("View Customer");
+         
+         
+         
 
         addProductMain.getChildren().addAll(addProduct, updateProduct, deleteProduct, viewProduct);
-        rootItem.getChildren().addAll(dashboard, addProductMain, HistorytMain);
+        rootItem.getChildren().addAll(dashboard, addProductMain, HistorytMain,customersMain);
         HistorytMain.getChildren().addAll(dayhistory, weekhistory, monthlyhistory);
+        customersMain.getChildren().addAll(addcustomer,Viewcustomer);
 
         Tree_View.setRoot(rootItem);
         Tree_View.setShowRoot(false);
@@ -169,6 +191,8 @@ public class Billing_PointController implements Initializable {
         day_pane.setVisible(false);
         week_pane.setVisible(false);
         monthly_pane.setVisible(false);
+        customers_pane.setVisible(false);
+        customers_add_pane.setVisible(false);
 
         Tree_View.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null) {
@@ -194,6 +218,10 @@ public class Billing_PointController implements Initializable {
                     showPane(week_pane);
                 } else if (selected.equals("Monthly Expenses")) {
                     showPane(monthly_pane);
+                } else if (selected.equals("Customers")) {
+                    showPane(customers_pane);
+                } else if (selected.equals("Add Customer")) {
+                    showPane(customers_add_pane);
                 }
             }
         });
@@ -243,6 +271,8 @@ public class Billing_PointController implements Initializable {
         day_pane.setVisible(false);
         week_pane.setVisible(false);
         monthly_pane.setVisible(false);
+        customers_pane.setVisible(false);
+        customers_add_pane.setVisible(false);
 
         targetPane.setVisible(true);
     }
@@ -270,7 +300,8 @@ private void toggleSidebar() {
     TranslateTransition dayPaneSlide = createSmoothSlide(day_pane, moveX, duration);
     TranslateTransition weekPaneSlide = createSmoothSlide(week_pane, moveX, duration);
     TranslateTransition monthPaneSlide = createSmoothSlide(monthly_pane, moveX, duration);
-
+    TranslateTransition customerPaneSlide = createSmoothSlide(customers_pane, moveX, duration);
+    TranslateTransition addcustomPaneSlide = createSmoothSlide(customers_add_pane, moveX, duration);
     // Play all animations together
     sidebarSlide.play();
     dashSlide.play();
@@ -283,6 +314,8 @@ private void toggleSidebar() {
     dayPaneSlide.play();
     weekPaneSlide.play();
     monthPaneSlide.play();
+    customerPaneSlide.play();
+    addcustomPaneSlide.play();
 }
 
     // Helper method — creates smooth animation
@@ -293,9 +326,5 @@ private TranslateTransition createSmoothSlide(javafx.scene.Node node, double toX
     slide.setInterpolator(Interpolator.EASE_BOTH);
     return slide;
 }
-
-
-
-
 
 }

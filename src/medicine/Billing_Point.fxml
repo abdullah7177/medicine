@@ -47,7 +47,7 @@
                             <Circle centerX="35" centerY="35" radius="35" />
                         </clip>
                     </ImageView>
-                    <Label styleClass="profile-name" text="Mia Abdullah" textFill="#fff4e7" />
+                    <Label styleClass="profile-name" text="Mia Abdullah" textFill="#b4cfed" />
                     <Label styleClass="profile-email" text="alex@something.com" />
                 </VBox>
 
@@ -63,7 +63,7 @@
                           <FontAwesomeIcon glyphName="CLOSE" size="1.5em" />
                       </graphic>
                   </Button>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="183.0" prefWidth="331.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="Add Products">
                         <font>
@@ -128,7 +128,7 @@
          </AnchorPane>
          <AnchorPane fx:id="Tree_Dash" layoutX="250.0" layoutY="100.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="161.0" prefWidth="385.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0">
                   <children>
                      <Label fx:id="dashboard_label" layoutX="14.0" layoutY="22.0" text="Welcome To Dashboard!">
                         <font>
@@ -220,7 +220,7 @@
          </AnchorPane>
          <AnchorPane fx:id="add_pane" layoutX="250.0" layoutY="127.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="163.0" prefWidth="320.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="Add Product" textFill="#4a2c00">
                         <font>
@@ -234,7 +234,7 @@
                      </ImageView>
                   </children>
                </AnchorPane>
-               <AnchorPane layoutX="23.0" layoutY="198.0" prefHeight="391.0" prefWidth="914.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="190.0">
+               <AnchorPane layoutX="23.0" layoutY="212.0" prefHeight="368.0" prefWidth="957.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="212.0">
                   <children>
                      <TextField layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Item Code" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
                      <TextField layoutX="14.0" layoutY="61.0" prefWidth="200.0" promptText="Product name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
@@ -357,16 +357,16 @@
          </AnchorPane>
          <AnchorPane fx:id="view_product" layoutX="250.0" layoutY="58.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="184.0" prefHeight="383.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="184.0">
+               <TableView layoutX="14.0" layoutY="199.33333333333334" prefHeight="368.0" prefWidth="969.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="199.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="C1" />
                    <TableColumn prefWidth="75.0" text="C2" />
                  </columns>
                </TableView>
-               <TextField layoutX="350.0" layoutY="100.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="addsearch" stylesheets="@Proffectional_Look.css" />
-               <FontAwesomeIcon glyphName="SEARCH" layoutX="356.0" layoutY="131.0" size="1.5em" />
-               <DatePicker layoutX="611.0" layoutY="99.0" prefHeight="30.0" prefWidth="250.0" styleClass="add_textfield" />
-               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="161.0" prefWidth="320.0" styleClass="add_anchor">
+               <TextField layoutX="405.0" layoutY="104.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="addsearch" stylesheets="@Proffectional_Look.css" />
+               <FontAwesomeIcon glyphName="SEARCH" layoutX="411.0" layoutY="135.0" size="1.5em" />
+               <DatePicker layoutX="666.0" layoutY="103.0" prefHeight="49.0" prefWidth="250.0" promptText="Date" styleClass="add_textfield" />
+               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="180.0" prefWidth="350.0" styleClass="add_anchor">
                   <children>
                      <Label layoutX="22.0" layoutY="33.0" text="View Products" textFill="#947e20">
                         <font>
@@ -384,7 +384,7 @@
          </AnchorPane>
          <AnchorPane fx:id="history_pane" layoutX="250.0" layoutY="70.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="173.0" prefWidth="331.0" styleClass="history_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="20.0" text="Expenses" textFill="#162c79">
                         <font>
@@ -421,7 +421,7 @@
          </AnchorPane>
          <AnchorPane fx:id="day_pane" layoutX="250.0" layoutY="91.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="161.0" prefWidth="311.0" styleClass="history_pane">
+               <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="180.0" prefWidth="350.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="22.0" layoutY="24.0" text="Daily Expenses" textFill="#274d77">
                         <font>
@@ -459,12 +459,13 @@
                   </font>
                </Label>
                <DatePicker layoutX="175.0" layoutY="482.0" promptText="Expenses Current Date" styleClass="update_pane_textfields" />
-               <TableView layoutX="475.0" layoutY="29.0" prefHeight="549.0" prefWidth="461.0" styleClass="history_table" AnchorPane.bottomAnchor="21.333333333333258" AnchorPane.leftAnchor="475.0" AnchorPane.rightAnchor="13.333333333333371" AnchorPane.topAnchor="29.0">
+               <TableView layoutX="446.0" layoutY="29.0" prefHeight="549.0" prefWidth="538.0" styleClass="history_table" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="446.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="29.0">
                  <columns>
-                   <TableColumn prefWidth="75.0" text="Title" />
-                   <TableColumn prefWidth="138.66668701171875" text="Description" />
-                     <TableColumn prefWidth="115.33331298828125" text="Amount" />
-                     <TableColumn prefWidth="112.0" text="Date" />
+                   <TableColumn prefWidth="75.0" text="Name" />
+                   <TableColumn prefWidth="112.66669464111328" text="Title" />
+                     <TableColumn prefWidth="130.6665496826172" text="Description" />
+                     <TableColumn prefWidth="89.3333740234375" text="Amount" />
+                     <TableColumn prefWidth="77.3333740234375" text="Date" />
                  </columns>
                </TableView>
                <Label layoutX="37.0" layoutY="241.0" text="Name:" textFill="#274d77">
@@ -477,7 +478,7 @@
          </AnchorPane>
          <AnchorPane fx:id="week_pane" layoutX="250.0" layoutY="77.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="183.0" prefWidth="351.0" styleClass="history_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="View Daily Expenses" textFill="#1e2b80">
                         <font>
@@ -516,9 +517,9 @@
                </Label>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="monthly_pane" layoutX="250.0" layoutY="78.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="monthly_pane" layoutX="250.0" layoutY="78.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="153.0" prefWidth="320.0" styleClass="history_pane">
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="7.0" text="View Monthly Expenses" textFill="#192e74">
                         <font>
@@ -532,7 +533,7 @@
                      </ImageView>
                   </children>
                </AnchorPane>
-               <AnchorPane layoutX="14.0" layoutY="200.0" prefHeight="160.0" prefWidth="300.0" styleClass="history_pane">
+               <AnchorPane layoutX="14.0" layoutY="285.0" prefHeight="160.0" prefWidth="300.0" styleClass="history_pane">
                   <children>
                      <Label layoutX="14.0" layoutY="14.0" text="Monthly Expenses" textFill="#192e74">
                         <font>
@@ -551,9 +552,185 @@
                      </Label>
                   </children>
                </AnchorPane>
+               <TableView layoutX="400.0" layoutY="67.0" prefHeight="507.0" prefWidth="580.0" styleClass="history_table" AnchorPane.bottomAnchor="25.333333333333314" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="17.333333333333258" AnchorPane.topAnchor="67.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="Name" />
+                   <TableColumn prefWidth="108.66668701171875" text="Title" />
+                     <TableColumn prefWidth="148.66668701171875" text="Description" />
+                     <TableColumn prefWidth="98.66668701171875" text="Amount" />
+                     <TableColumn prefWidth="98.66668701171875" text="Date" />
+                 </columns>
+               </TableView>
             </children>
          </AnchorPane>
-
+         <AnchorPane fx:id="customers_pane" layoutX="264.0" prefHeight="600.0" prefWidth="983.0" styleClass="costoms-card" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" styleClass="costoms-card">
+                  <children>
+                     <Label layoutX="25.0" layoutY="14.0" text="Daily Customers" textFill="#600d69">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                     <ImageView fx:id="costomers_images" fitHeight="80.0" fitWidth="115.0" layoutX="225.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/service.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </AnchorPane>
+               <AnchorPane layoutX="14.0" layoutY="249.0" prefHeight="160.0" prefWidth="300.0" styleClass="attended-pane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="14.0" text="Attend Customers" textFill="#310a31">
+                        <font>
+                           <Font size="21.0" />
+                        </font>
+                     </Label>
+                     <ImageView fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/verified-user.png" />
+                        </image>
+                     </ImageView>
+                     <Label layoutX="14.0" layoutY="84.0" prefHeight="31.0" prefWidth="106.0" text="0" textFill="#310a31">
+                        <font>
+                           <Font size="21.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <AnchorPane layoutX="364.0" layoutY="249.0" prefHeight="160.0" prefWidth="300.0" styleClass="remaining-pane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="14.0" text="Pending Customers" textFill="#671717">
+                        <font>
+                           <Font size="21.0" />
+                        </font>
+                     </Label>
+                     <ImageView fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/expired.png" />
+                        </image>
+                     </ImageView>
+                     <Label layoutX="14.0" layoutY="84.0" prefHeight="31.0" prefWidth="106.0" text="0" textFill="#310a31">
+                        <font>
+                           <Font size="21.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="customers_add_pane" layoutX="250.0" layoutY="14.0" prefHeight="600.0" prefWidth="997.0" styleClass="customersAddPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="133.0" prefWidth="338.0" styleClass="customersAddPane">
+                  <children>
+                     <Label layoutX="14.0" layoutY="14.0" text="Add customers" textFill="#15666b">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                     <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="240.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/new-account.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </AnchorPane>
+               <Label layoutX="14.0" layoutY="162.0" text="Name:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="162.0" prefHeight="34.0" prefWidth="180.0" promptText="Customer Name" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="206.0" text="Contact:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="206.0" prefHeight="34.0" prefWidth="180.0" promptText="Contact Number" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="250.0" text="Address:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="250.0" prefHeight="34.0" prefWidth="180.0" promptText="Customer Address" styleClass="CustomersSectiontext-field" />
+               <TableView layoutX="368.0" layoutY="23.333333333333332" prefHeight="563.0" prefWidth="602.0" styleClass="CustomersSectiontable-view" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="366.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="21.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <Label layoutX="14.0" layoutY="295.0" text="Medicine:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="295.0" prefHeight="34.0" prefWidth="180.0" promptText="Medicine name" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="340.0" text="Quantity:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="340.0" prefHeight="34.0" prefWidth="180.0" promptText="Medicine Qty" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="386.0" text="Price_per_Unit:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="386.0" prefHeight="34.0" prefWidth="180.0" promptText="One_Piece_Price" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="433.0" text="Total_Price:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="433.0" prefHeight="34.0" prefWidth="180.0" promptText="Total_Amount" styleClass="CustomersSectiontext-field" />
+               <Label layoutX="14.0" layoutY="477.0" text="Remaining_Amount:" textFill="#15666b">
+                  <font>
+                     <Font size="17.0" />
+                  </font>
+               </Label>
+               <TextField layoutX="174.0" layoutY="477.0" prefHeight="34.0" prefWidth="180.0" promptText="Remains Amount" styleClass="CustomersSectiontext-field" />
+               <Button layoutX="47.0" layoutY="528.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="293.0" styleClass="CustomersSectionbutton" text="Add">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Button>
+               <Button layoutX="47.0" layoutY="575.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="293.0" styleClass="CustomersSectionbutton" text="Clear">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+         <AnchorPane fx:id="viewCustomersPane" layoutX="250.0" layoutY="237.0" prefHeight="615.0" prefWidth="997.0" styleClass="viewCustomersPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="300.0" stylesheets="@Proffectional_Look.css">
+                  <styleClass>
+                     <String fx:value="viewCustomersPane" />
+                     <String fx:value="shadow" />
+                  </styleClass>
+                  <children>
+                     <Label layoutX="14.0" layoutY="20.0" text="View Customers" textFill="#42a5f5">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </AnchorPane>
+               <TableView layoutX="14.0" layoutY="224.0" prefHeight="382.0" prefWidth="957.0" styleClass="view_table_Views" AnchorPane.bottomAnchor="8.666666666666629" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="224.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <TextField layoutX="373.0" layoutY="132.0" prefHeight="36.0" prefWidth="239.0" promptText="Search by name" styleClass="history_textfield">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+               </TextField>
+               <FontAwesomeIcon fill="#302777" glyphName="SEARCH" layoutX="590.0" layoutY="154.0" size="1.5em" />
+            </children></AnchorPane>
+         
+         
         </AnchorPane>
     </children>
 </StackPane>
