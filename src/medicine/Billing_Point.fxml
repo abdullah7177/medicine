@@ -51,7 +51,7 @@
                 <Separator />
             <TreeView fx:id="Tree_View" prefHeight="368.0" prefWidth="239.0" stylesheets="@Proffectional_Look.css" />
             </VBox>
-         <AnchorPane fx:id="add_panes" layoutX="250.0" layoutY="31.333333333333332" prefHeight="600.0" prefWidth="950.0" styleClass="orange" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="add_panes" layoutX="250.0" layoutY="31.333333333333332" prefHeight="600.0" prefWidth="950.0" styleClass="orange" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
       
                   <!-- Top Right Close Button -->
@@ -87,7 +87,7 @@
                      <Separator layoutX="5.0" layoutY="66.0" prefHeight="3.0" prefWidth="357.0" />
                   </children>
                </AnchorPane>
-               <AnchorPane layoutX="782.0" layoutY="69.0" prefHeight="310.0" prefWidth="153.0">
+               <AnchorPane layoutX="782.0" layoutY="69.0" prefHeight="310.0" prefWidth="153.0" visible="false">
                   <children>
                      <Label fx:id="dashboardClock" layoutX="57.0" layoutY="61.0" styleClass="dashboard_clock" text="Label" />
                   </children>
@@ -112,25 +112,28 @@
                </AnchorPane>
                <AnchorPane layoutX="23.0" layoutY="198.0" prefHeight="391.0" prefWidth="914.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="190.0">
                   <children>
-                     <TextField layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Item Code" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="61.0" prefWidth="200.0" promptText="Product name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="107.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="154.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="202.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="14.0" layoutY="249.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="232.0" layoutY="14.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="232.0" layoutY="61.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="232.0" layoutY="107.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
-                     <TextField layoutX="696.0" layoutY="12.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="696.0" layoutY="59.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="696.0" layoutY="105.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="696.0" layoutY="152.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="696.0" layoutY="200.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="696.0" layoutY="247.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-                     <TextField layoutX="477.0" layoutY="12.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
-                     <TextField layoutX="477.0" layoutY="59.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
-                     <TextField layoutX="477.0" layoutY="105.0" prefWidth="200.0" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
-                     <Button layoutX="311.0" layoutY="199.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="300.0" styleClass="add_button" stylesheets="@Proffectional_Look.css" text="Add" />
+                  <TextField fx:id="txtItemCode" layoutX="14.0" layoutY="14.0" prefWidth="200.0" promptText="Item Code" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtProductName" layoutX="14.0" layoutY="61.0" prefWidth="200.0" promptText="Product name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtBatchNo" layoutX="14.0" layoutY="107.0" prefWidth="200.0" promptText="Batch NO" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtBonus" layoutX="14.0" layoutY="154.0" prefWidth="200.0" promptText="Bonus" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtCompanyName" layoutX="14.0" layoutY="202.0" prefWidth="200.0" promptText="Company Name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtRetail" layoutX="14.0" layoutY="249.0" prefWidth="200.0" promptText="Retail" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+
+<TextField fx:id="txtSalePrice" layoutX="232.0" layoutY="14.0" prefWidth="200.0" promptText="SalePrice" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtGroup" layoutX="232.0" layoutY="61.0" prefWidth="200.0" promptText="Group" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+<TextField fx:id="txtCompanyDis" layoutX="232.0" layoutY="107.0" prefWidth="200.0" promptText="Company Dis" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" />
+
+<TextField fx:id="txtCostPrice" layoutX="696.0" layoutY="12.0" prefWidth="200.0" promptText="Cost Price" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+<TextField fx:id="txtSaleTax" layoutX="696.0" layoutY="59.0" prefWidth="200.0" promptText="Sale Tax" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+<TextField fx:id="txtCompanyName2" layoutX="696.0" layoutY="105.0" prefWidth="200.0" promptText="Company Name" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+<TextField fx:id="txtPiecesPick" layoutX="696.0" layoutY="152.0" prefWidth="200.0" promptText="Pieces Pick" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+
+<TextField fx:id="txtTradePrice" layoutX="477.0" layoutY="12.0" prefWidth="200.0" promptText="Trade Price" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
+<TextField fx:id="txtDiscount" layoutX="477.0" layoutY="59.0" prefWidth="200.0" promptText="Discount" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
+<TextField fx:id="txtBonusPrice" layoutX="477.0" layoutY="105.0" prefWidth="200.0" promptText="Bonus Price" styleClass="add_textfield" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="230.0" />
+
+<Button fx:id="btnAdd" layoutX="311.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#insertData" prefHeight="40.0" prefWidth="300.0" styleClass="add_button" stylesheets="@Proffectional_Look.css" text="Add" />
+
                   </children>
                </AnchorPane>
             </children>
@@ -151,33 +154,43 @@
                      <String fx:value="shadow" />
                   </styleClass>
                </AnchorPane>
-               <TableView layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="927.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-                 <columns>
-                   <TableColumn prefWidth="75.0" text="C1" />
-                   <TableColumn prefWidth="75.0" text="C2" />
-                     <TableColumn prefWidth="75.0" text="C2" />
-                 </columns>
+               <TableView fx:id="tableProducts" layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="927.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                   <columns>
+                       <TableColumn fx:id="colItemCode" prefWidth="75.0" text="Item Code" />
+                       <TableColumn fx:id="colProductName" prefWidth="94.0" text="Item Name" />
+                       <TableColumn fx:id="colBatchNo" prefWidth="79.0" text="Batch NO" />
+                       <TableColumn fx:id="colSalePrice" text="Sale Price" />
+                       <TableColumn fx:id="colCompanyDis" prefWidth="95.0" text="Company Dis" />
+                       <TableColumn fx:id="colTradePrice" prefWidth="87.0" text="Trade Price" />
+                       <TableColumn fx:id="colDiscount" prefWidth="89.0" text="Discount" />
+                       <TableColumn fx:id="colCostPrice" prefWidth="73.0" text="Cost Price" />
+                       <TableColumn fx:id="colSaleTax" prefWidth="109.0" text="Sale Tax" />
+                       <TableColumn fx:id="colCompanyName" prefWidth="138.0" text="Comp Name" />
+                   </columns>
                </TableView>
-               <TextField layoutX="14.0" layoutY="318.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="359.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="400.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="441.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="482.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="523.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="318.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="359.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="226.0" layoutY="400.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="736.0" layoutY="314.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="355.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="396.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="437.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="478.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="736.0" layoutY="519.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="522.0" layoutY="314.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <TextField layoutX="522.0" layoutY="355.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <TextField layoutX="522.0" layoutY="396.0" prefWidth="200.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
-               <Button layoutX="326.0" layoutY="466.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="320.0" styleClass="addData_button" stylesheets="@Proffectional_Look.css" text="Update" AnchorPane.bottomAnchor="86.66666666666666" />
-               <Button layoutX="326.0" layoutY="533.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="320.0" styleClass="clear_button" stylesheets="@Proffectional_Look.css" text="Clear" AnchorPane.bottomAnchor="28.0" />
+
+               <TextField fx:id="txtItemCodeT" layoutX="14.0" layoutY="318.0" prefWidth="200.0" promptText="ItemCode" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtProductNameT" layoutX="14.0" layoutY="359.0" prefWidth="200.0" promptText="Item Name" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtBatchNoT" layoutX="14.0" layoutY="400.0" prefWidth="200.0" promptText="Batch NO" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtBonusT" layoutX="14.0" layoutY="441.0" prefWidth="200.0" promptText="Bonus" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtCompanyCodeT" layoutX="14.0" layoutY="482.0" prefWidth="200.0" promptText="Company Code" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtRetailT" layoutX="14.0" layoutY="523.0" prefWidth="200.0" promptText="Retail" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+
+               <TextField fx:id="txtSalePriceT" layoutX="226.0" layoutY="318.0" prefWidth="200.0" promptText="Sale Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtGroupT" layoutX="226.0" layoutY="359.0" prefWidth="200.0" promptText="Group" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtCompanyDisT" layoutX="226.0" layoutY="400.0" prefWidth="200.0" promptText="Company Dis" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+
+               <TextField fx:id="txtCostPriceT" layoutX="736.0" layoutY="314.0" prefWidth="200.0" promptText="Cost Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtSaleTaxT" layoutX="736.0" layoutY="355.0" prefWidth="200.0" promptText="Sale Tax" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtCompanyNameT" layoutX="736.0" layoutY="396.0" prefWidth="200.0" promptText="Company Name" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtPiecesPickT" layoutX="736.0" layoutY="437.0" prefWidth="200.0" promptText="Pieces pick" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+
+               <TextField fx:id="txtTradePriceT" layoutX="522.0" layoutY="314.0" prefWidth="200.0" promptText="Trade Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+               <TextField fx:id="txtDiscountT" layoutX="522.0" layoutY="355.0" prefWidth="200.0" promptText="Discount" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+               <TextField fx:id="txtBonusPriceT" layoutX="522.0" layoutY="396.0" prefWidth="200.0" promptText="Bonus Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="225.0" />
+
+               <Button fx:id="updatebutton" layoutX="326.0" layoutY="466.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="320.0" styleClass="addData_button" stylesheets="@Proffectional_Look.css" text="Update" AnchorPane.bottomAnchor="86.66666666666666" />
+               <Button fx:id="clearbutton" layoutX="326.0" layoutY="533.0" mnemonicParsing="false" onMouseClicked="#clearUpdateFields" prefHeight="41.0" prefWidth="320.0" styleClass="clear_button" stylesheets="@Proffectional_Look.css" text="Clear" AnchorPane.bottomAnchor="28.0" />
             </children>
          </AnchorPane>
          <AnchorPane fx:id="delete_pane" layoutX="249.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_root" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
@@ -192,40 +205,59 @@
                      </ImageView>
                   </children>
                </AnchorPane>
-               <TableView layoutX="14.0" layoutY="106.0" prefHeight="200.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-                 <columns>
-                   <TableColumn prefWidth="75.0" text="C1" />
-                   <TableColumn prefWidth="75.0" text="C2" />
-                 </columns>
+               <TableView fx:id="tabledelete" layoutX="14.0" layoutY="106.0" prefHeight="200.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                   <columns>
+                       <TableColumn fx:id="colItemCodeD" prefWidth="75.0" text="ItemCode" />
+                       <TableColumn fx:id="colProductNameD" prefWidth="106.0" text="Item Name" />
+                       <TableColumn fx:id="colBatchNoD" prefWidth="99.0" text="Batch NO" />
+                       <TableColumn fx:id="colSalePriceD" prefWidth="84.0" text="Sale Price" />
+                       <TableColumn fx:id="colCompanyDisD" prefWidth="100.0" text="Company Dis" />
+                       <TableColumn fx:id="colTradePriceD" prefWidth="85.0" text="Trade Price" />
+                       <TableColumn fx:id="colDiscountD" prefWidth="107.0" text="Discount" />
+                       <TableColumn fx:id="colSaleTaxD" prefWidth="104.0" text="Sale Tax" />
+                       <TableColumn fx:id="colCompanyNameD" prefWidth="159.0" text="Company Name" />
+                   </columns>
                </TableView>
-               <TextField layoutX="14.0" layoutY="330.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="373.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="416.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="459.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="502.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="14.0" layoutY="546.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="536.0" layoutY="333.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="536.0" layoutY="376.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="536.0" layoutY="419.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
-               <TextField layoutX="744.0" layoutY="333.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="376.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="419.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="462.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="505.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="744.0" layoutY="549.0" prefHeight="33.0" prefWidth="191.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
-               <TextField layoutX="219.0" layoutY="330.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="219.0" layoutY="373.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <TextField layoutX="219.0" layoutY="416.0" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
-               <Button layoutX="310.0" layoutY="483.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="329.0" styleClass="delete_pane_delete_button" stylesheets="@Proffectional_Look.css" text="Delete" />
-               <Button layoutX="310.0" layoutY="543.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="329.0" styleClass="delete_pane_clear_button" stylesheets="@Proffectional_Look.css" text="Clear" />
+
+               <TextField fx:id="txtItemCodeD" layoutX="14.0" layoutY="330.0" promptText="Enter Item Code" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtProductNameD" layoutX="14.0" layoutY="373.0" promptText="Enter Product Name" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtBatchNoD" layoutX="14.0" layoutY="416.0" promptText="Enter Batch No" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtBonusD" layoutX="14.0" layoutY="459.0" promptText="Enter Bonus" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtCompanyCodeD" layoutX="14.0" layoutY="502.0" prefHeight="33.0" prefWidth="191.0" promptText="Enter Company Code" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtRetailD" layoutX="14.0" layoutY="546.0" prefHeight="33.0" prefWidth="191.0" promptText="Enter Retail Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+
+               <TextField fx:id="txtSalePriceD" layoutX="536.0" layoutY="333.0" promptText="Enter Trade Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+               <TextField fx:id="txtGroupD" layoutX="536.0" layoutY="376.0" promptText="Enter Discount" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+               <TextField fx:id="txtCompanyDisD" layoutX="536.0" layoutY="419.0" promptText="Enter Bonus Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="220.0" />
+
+               <TextField fx:id="txtCostPriceD" layoutX="744.0" layoutY="333.0" promptText="Enter Cost Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtSaleTaxD" layoutX="744.0" layoutY="376.0" promptText="Enter Sale Tax" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtCompanyNameD" layoutX="744.0" layoutY="419.0" promptText="Enter Company Name" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+               <TextField fx:id="txtPiecesPickD" layoutX="744.0" layoutY="462.0" promptText="Enter Pieces/Pick" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" AnchorPane.rightAnchor="14.0" />
+
+               <TextField fx:id="txtBonusPriceD" layoutX="219.0" layoutY="330.0" promptText="Enter Sale Price" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtExpiryDateD" layoutX="219.0" layoutY="373.0" promptText="Group" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+               <TextField fx:id="txtQuantityD" layoutX="219.0" layoutY="416.0" promptText="Company Dis" styleClass="addtext-field" stylesheets="@Proffectional_Look.css" />
+
+               <Button fx:id="btnDeleteD" layoutX="310.0" layoutY="483.0" mnemonicParsing="false" onMouseClicked="#handleDeleteRow" prefHeight="41.0" prefWidth="329.0" styleClass="delete_pane_delete_button" stylesheets="@Proffectional_Look.css" text="Delete" />
+               <Button fx:id="btnClearD" layoutX="310.0" layoutY="543.0" mnemonicParsing="false" onMouseClicked="#removedelted" prefHeight="35.0" prefWidth="329.0" styleClass="delete_pane_clear_button" stylesheets="@Proffectional_Look.css" text="Clear" />
+
             </children>
          </AnchorPane>
          <AnchorPane fx:id="view_product" layoutX="250.0" layoutY="58.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-               <TableView layoutX="14.0" layoutY="100.0" prefHeight="467.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="32.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.00000000000006">
+               <TableView fx:id="Finalviewtable" layoutX="14.0" layoutY="100.0" prefHeight="467.0" prefWidth="922.0" styleClass="add_table" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="32.666666666666686" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="100.00000000000006">
                  <columns>
-                   <TableColumn prefWidth="75.0" text="C1" />
-                   <TableColumn prefWidth="75.0" text="C2" />
+                   <TableColumn fx:id="itemcodeL" prefWidth="75.0" text="ItemCode" />
+                   <TableColumn fx:id="itemnamel" prefWidth="90.0" text="ItemName" />
+                     <TableColumn fx:id="batchnol" prefWidth="90.0" text="Batch No" />
+                     <TableColumn fx:id="salepricel" prefWidth="101.0" text="Sale Price" />
+                     <TableColumn fx:id="companydisl" prefWidth="100.0" text="Company Dis" />
+                     <TableColumn fx:id="tradepricel" prefWidth="74.0" text="Trade price" />
+                     <TableColumn fx:id="discountl" prefWidth="106.0" text="Discount" />
+                     <TableColumn fx:id="costpricel" prefWidth="69.0" text="Cost Price" />
+                     <TableColumn fx:id="saletaxl" prefWidth="90.0" text="Sale Tax" />
+                     <TableColumn fx:id="companynamel" prefWidth="124.0" text="Company Name" />
                  </columns>
                </TableView>
                <TextField layoutX="95.0" layoutY="38.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="addsearch" stylesheets="@Proffectional_Look.css" />
