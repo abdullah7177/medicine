@@ -47,12 +47,26 @@
                             <Circle centerX="35" centerY="35" radius="35" />
                         </clip>
                     </ImageView>
-                    <Label styleClass="profile-name" text="Mia Abdullah" textFill="#fff4e7" />
+                    <Label styleClass="profile-name" text="Mia Abdullah" textFill="#b4cfed" />
                     <Label styleClass="profile-email" text="alex@something.com" />
                 </VBox>
 
                 <Separator />
-            <TreeView fx:id="Tree_View" prefHeight="368.0" prefWidth="239.0" stylesheets="@Proffectional_Look.css" />
+            <TreeView fx:id="Tree_View" prefHeight="304.0" prefWidth="239.0" stylesheets="@Proffectional_Look.css" />
+            <AnchorPane prefHeight="30.0" prefWidth="239.0">
+               <children>
+                  <Button layoutX="5.0" layoutY="70.0" mnemonicParsing="false" onAction="#close" styleClass="Sign_out">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
+                     </graphic>
+                  </Button>
+                  <Label layoutX="54.0" layoutY="71.0" text="LogOut" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             </VBox>
          <AnchorPane fx:id="add_panes" layoutX="250.0" layoutY="31.333333333333332" prefHeight="600.0" prefWidth="950.0" styleClass="orange" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -126,7 +140,7 @@
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="Tree_Dash" layoutX="250.0" layoutY="100.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="Tree_Dash" layoutX="250.0" layoutY="100.0" prefHeight="600.0" prefWidth="950.0" styleClass="add_anchor" stylesheets="@Proffectional_Look.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="350.0" stylesheets="@Proffectional_Look.css" AnchorPane.leftAnchor="14.0">
                   <children>
@@ -365,7 +379,7 @@
                </TableView>
                <TextField layoutX="405.0" layoutY="104.0" prefHeight="49.0" prefWidth="250.0" promptText="search" styleClass="addsearch" stylesheets="@Proffectional_Look.css" />
                <FontAwesomeIcon glyphName="SEARCH" layoutX="411.0" layoutY="135.0" size="1.5em" />
-               <DatePicker layoutX="666.0" layoutY="103.0" prefHeight="49.0" prefWidth="250.0" promptText="Date" styleClass="add_textfield" />
+               <DatePicker layoutX="666.0" layoutY="103.0" prefHeight="49.0" prefWidth="250.0" promptText="Search by Date" styleClass="add_textfield" />
                <AnchorPane layoutX="14.0" layoutY="13.0" prefHeight="180.0" prefWidth="350.0" styleClass="add_anchor">
                   <children>
                      <Label layoutX="22.0" layoutY="33.0" text="View Products" textFill="#947e20">
@@ -391,7 +405,7 @@
                            <Font size="32.0" />
                         </font>
                      </Label>
-                     <ImageView fitHeight="89.0" fitWidth="102.0" layoutX="211.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="expense__image" fitHeight="89.0" fitWidth="102.0" layoutX="211.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/24-hours%20(1).png" />
                         </image>
@@ -405,7 +419,7 @@
                            <Font size="25.0" />
                         </font>
                      </Label>
-                     <ImageView fitHeight="80.0" fitWidth="106.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="Total_expanse_image" fitHeight="80.0" fitWidth="106.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/24-hours%20(2).png" />
                         </image>
@@ -417,6 +431,11 @@
                      </Label>
                   </children>
                </AnchorPane>
+               <Label fx:id="Expense_time" layoutX="824.0" layoutY="14.0" text="Time" textFill="#1f3091">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
             </children>
          </AnchorPane>
          <AnchorPane fx:id="day_pane" layoutX="250.0" layoutY="91.0" prefHeight="600.0" prefWidth="950.0" styleClass="history_pane" stylesheets="@Proffectional_Look.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -552,7 +571,7 @@
                      </Label>
                   </children>
                </AnchorPane>
-               <TableView layoutX="400.0" layoutY="67.0" prefHeight="507.0" prefWidth="580.0" styleClass="history_table" AnchorPane.bottomAnchor="25.333333333333314" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="17.333333333333258" AnchorPane.topAnchor="67.0">
+               <TableView layoutX="400.0" layoutY="111.33333333333333" prefHeight="478.0" prefWidth="580.0" styleClass="history_table" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="111.0">
                  <columns>
                    <TableColumn prefWidth="75.0" text="Name" />
                    <TableColumn prefWidth="108.66668701171875" text="Title" />
@@ -561,6 +580,7 @@
                      <TableColumn prefWidth="98.66668701171875" text="Date" />
                  </columns>
                </TableView>
+               <DatePicker layoutX="567.0" layoutY="50.0" promptText="Search by Date" styleClass="history_textfield" />
             </children>
          </AnchorPane>
          <AnchorPane fx:id="customers_pane" layoutX="264.0" prefHeight="600.0" prefWidth="983.0" styleClass="costoms-card" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -572,7 +592,7 @@
                            <Font size="30.0" />
                         </font>
                      </Label>
-                     <ImageView fx:id="costomers_images" fitHeight="80.0" fitWidth="115.0" layoutX="225.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="costomers_imag" fitHeight="80.0" fitWidth="115.0" layoutX="225.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/service.png" />
                         </image>
@@ -586,7 +606,7 @@
                            <Font size="21.0" />
                         </font>
                      </Label>
-                     <ImageView fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="attend_costomer" fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/verified-user.png" />
                         </image>
@@ -600,12 +620,12 @@
                </AnchorPane>
                <AnchorPane layoutX="364.0" layoutY="249.0" prefHeight="160.0" prefWidth="300.0" styleClass="remaining-pane">
                   <children>
-                     <Label layoutX="14.0" layoutY="14.0" text="Attend Customers" textFill="#671717">
+                     <Label layoutX="14.0" layoutY="14.0" text="Pending Customers" textFill="#671717">
                         <font>
                            <Font size="21.0" />
                         </font>
                      </Label>
-                     <ImageView fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="pending_customer" fitHeight="79.0" fitWidth="95.0" layoutX="200.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/expired.png" />
                         </image>
@@ -619,7 +639,7 @@
                </AnchorPane>
             </children>
          </AnchorPane>
-         <AnchorPane fx:id="customers_add_pane" layoutX="250.0" layoutY="14.0" prefHeight="600.0" prefWidth="997.0" styleClass="customersAddPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <AnchorPane fx:id="customers_add_pane" layoutX="250.0" layoutY="14.0" prefHeight="600.0" prefWidth="997.0" styleClass="customersAddPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="133.0" prefWidth="338.0" styleClass="customersAddPane">
                   <children>
@@ -628,7 +648,7 @@
                            <Font size="30.0" />
                         </font>
                      </Label>
-                     <ImageView fitHeight="70.0" fitWidth="80.0" layoutX="240.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="add_costo_images" fitHeight="70.0" fitWidth="80.0" layoutX="240.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@images/new-account.png" />
                         </image>
@@ -701,7 +721,41 @@
                </Button>
             </children>
          </AnchorPane>
-
+         <AnchorPane fx:id="viewCustomersPane" layoutX="250.0" layoutY="237.0" prefHeight="615.0" prefWidth="997.0" styleClass="viewCustomersPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="180.0" prefWidth="300.0" stylesheets="@Proffectional_Look.css">
+                  <styleClass>
+                     <String fx:value="viewCustomersPane" />
+                     <String fx:value="shadow" />
+                  </styleClass>
+                  <children>
+                     <Label layoutX="14.0" layoutY="20.0" text="View Customers" textFill="#21557d">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                     <ImageView fx:id="views_images" fitHeight="80.0" fitWidth="85.0" layoutX="187.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@images/analysis.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </AnchorPane>
+               <TableView layoutX="14.0" layoutY="224.0" prefHeight="382.0" prefWidth="957.0" styleClass="view_table_Views" AnchorPane.bottomAnchor="8.666666666666629" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="224.0">
+                 <columns>
+                   <TableColumn prefWidth="75.0" text="C1" />
+                   <TableColumn prefWidth="75.0" text="C2" />
+                 </columns>
+               </TableView>
+               <TextField layoutX="373.0" layoutY="132.0" prefHeight="36.0" prefWidth="239.0" promptText="Search by name" styleClass="history_textfield">
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+               </TextField>
+               <FontAwesomeIcon fill="#302777" glyphName="SEARCH" layoutX="590.0" layoutY="154.0" size="1.5em" />
+            </children></AnchorPane>
+         
+         
         </AnchorPane>
     </children>
 </StackPane>
