@@ -104,11 +104,25 @@ public class Billing_PointController implements Initializable {
     @FXML
     private AnchorPane customers_pane;
     @FXML
-    private ImageView costomers_images;
-    @FXML
     private AnchorPane customers_add_pane;
     @FXML
     private AnchorPane viewCustomersPane;
+    @FXML
+    private ImageView attend_costomer;
+    @FXML
+    private ImageView pending_customer;
+    @FXML
+    private ImageView add_costo_images;
+    @FXML
+    private ImageView views_images;
+    @FXML
+    private ImageView costomers_imag;
+    @FXML
+    private ImageView expense__image;
+    @FXML
+    private ImageView Total_expanse_image;
+    @FXML
+    private Label Expense_time;
    
 
     @FXML
@@ -125,6 +139,7 @@ public class Billing_PointController implements Initializable {
         startClock(clock2);
         startClock(Clock);
         startClock(clock3);
+        startClock(Expense_time);
         
         imageAnimation(View_expenses_image);
         imageAnimation(daily_image);
@@ -143,7 +158,17 @@ public class Billing_PointController implements Initializable {
         imageAnimation(monthly_image);
         imageAnimation(monthly_ex);
         imageAnimation(customer_image);
-         
+        imageAnimation(attend_costomer);
+        imageAnimation(pending_customer);
+        imageAnimation(add_costo_images);
+        imageAnimation(views_images);
+        imageAnimation(costomers_imag);
+        imageAnimation(expense__image);
+        imageAnimation(Total_expanse_image);
+        
+        
+        
+        
         // TreeView setup
         TreeItem<String> rootItem = new TreeItem<>("Root");
         rootItem.setExpanded(true);

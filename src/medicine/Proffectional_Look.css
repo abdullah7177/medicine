@@ -1225,5 +1225,15 @@
     -fx-background-color: #e3f2fd;
 }
 
-
-
+.Sign_out{
+    
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-radius: 5px;
+    
+}
+.Sign_out:hover{
+    
+    -fx-background-color: linear-gradient(to right, #21557d, #b4cfed);
+    
+}
