@@ -541,15 +541,6 @@ tableProducts.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         setupTreeView();
     }
     
-    
-    
-    
-    
-    
-    
-   
-    
-    
     // ===============================
     // Sidebar toggle
     @FXML
