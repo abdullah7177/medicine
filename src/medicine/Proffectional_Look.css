@@ -1205,20 +1205,20 @@
 
 /* ====== Header ====== */
 .view_table_Views .column-header-background {
-    -fx-background-color: linear-gradient(to right, #42a5f5, #64b5f6);
+    -fx-background-color: linear-gradient(to right, #21557d, #b4cfed);
     -fx-background-radius: 10 10 0 0;
 }
 
-.view_table_Views .column-header,
-.view_table_Views .label {
-    -fx-text-fill: white;
+
+.view_table_Views .column-header,.view_table_Views .label {
+    -fx-text-fill: #21557d;
     -fx-font-weight: bold;
 }
 
 /* ====== Rows ====== */
 .view_table_Views .table-row-cell {
     -fx-background-color: #ffffff;
-    -fx-border-color: transparent transparent #eeeeee transparent;
+    -fx-border-color: transparent transparent #21557d transparent;
 }
 
 .view_table_Views .table-row-cell:hover {

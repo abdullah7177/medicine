@@ -193,6 +193,7 @@ public class Billing_PointController implements Initializable {
         monthly_pane.setVisible(false);
         customers_pane.setVisible(false);
         customers_add_pane.setVisible(false);
+        viewCustomersPane.setVisible(false);
 
         Tree_View.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null) {
@@ -222,6 +223,8 @@ public class Billing_PointController implements Initializable {
                     showPane(customers_pane);
                 } else if (selected.equals("Add Customer")) {
                     showPane(customers_add_pane);
+                } else if (selected.equals("View Customer")) {
+                    showPane(viewCustomersPane);
                 }
             }
         });
@@ -273,7 +276,8 @@ public class Billing_PointController implements Initializable {
         monthly_pane.setVisible(false);
         customers_pane.setVisible(false);
         customers_add_pane.setVisible(false);
-
+         viewCustomersPane.setVisible(false);
+        
         targetPane.setVisible(true);
     }
 
@@ -302,6 +306,9 @@ private void toggleSidebar() {
     TranslateTransition monthPaneSlide = createSmoothSlide(monthly_pane, moveX, duration);
     TranslateTransition customerPaneSlide = createSmoothSlide(customers_pane, moveX, duration);
     TranslateTransition addcustomPaneSlide = createSmoothSlide(customers_add_pane, moveX, duration);
+    TranslateTransition ViewcustomPaneSlide = createSmoothSlide(viewCustomersPane, moveX, duration);
+
+    
     // Play all animations together
     sidebarSlide.play();
     dashSlide.play();
@@ -316,6 +323,7 @@ private void toggleSidebar() {
     monthPaneSlide.play();
     customerPaneSlide.play();
     addcustomPaneSlide.play();
+    ViewcustomPaneSlide.play();
 }
 
     // Helper method — creates smooth animation
